@@ -3,7 +3,7 @@
 
 { config, lib, pkgs, ... }:
 {
-  config = mkIf config.c-opt.graphical.hyprland.enable {
+  config = lib.mkIf config.c-opt.graphical.hyprland.enable {
 
     home-manager.users.${config.c-opt.user.name} = {
       home.packages = [ pkgs.hyprlock ];

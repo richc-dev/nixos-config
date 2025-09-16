@@ -25,14 +25,14 @@
 
       # Load sddm
       displayManager.sddm = {
-        enable = true;
-        package = pkgs.kdePackages.sddm;
-        wayland.enable = true;
+          enable = true;
+          package = pkgs.kdePackages.sddm;
+          wayland.enable = true;
+          extraPackages = with pkgs.kdePackages; [
+            qtsvg
+            qtvirtualkeyboard
+          ];
       };
-      extraPackages = with pkgs.kdePackages; [
-        qtsvg
-        qtVirtualkeyboard
-      ];
     };
 
     home-manager.users.${config.c-opt.user.name} =

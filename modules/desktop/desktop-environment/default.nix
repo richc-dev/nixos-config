@@ -14,7 +14,7 @@
   c-opt = {
     plasma.enable = lib.mkDefault false;
     graphical = {
-      fuzzle.enable = lib.mkDefault true;
+      fuzzel.enable = lib.mkDefault true;
       hyprland.enable = lib.mkDefault true;
       waybar.enable = lib.mkDefault true;
       xdg.enable = lib.mkDefault true;
