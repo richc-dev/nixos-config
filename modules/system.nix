@@ -22,7 +22,7 @@
   # Set up bootloader.
   boot.loader = {
     systemd-boot.enable = lib.mkDefault true;
-    efi.canTouchVariables = lib.mkDefault true;
+    efi.canTouchEfiVariables = lib.mkDefault true;
   };
 
   # Set device timezone.
@@ -57,6 +57,15 @@
     gparted
     wget
   ];
+
+  # Set up the user.
+  users.users.${config.c-opt.user.name} = {
+    isNormalUser = true;
+    description = config.c-opt.user.fullName;
+    extraGroups = [ "networkmanager" "wheel" "daemon" ];
+  };
+
+  nix.settings.trusted-users = [ config.c-opt.user.name ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

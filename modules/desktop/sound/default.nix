@@ -1,8 +1,8 @@
-{ ... }:
+{ config, lib, ... }:
 {
     options.c-opt.sound.enable = lib.mkEnableOption "Sound";
 
-    config = mkIf config.c-opt.sound.enable {
+    config = lib.mkIf config.c-opt.sound.enable {
       # Enable sound with Pipewire.
       # https://wiki.nixos.org/wiki/PipeWire
       security.rtkit.enable = true;
@@ -21,7 +21,6 @@
       # https://wiki.nixos.org/wiki/Bluetooth
       hardware.bluetooth = {
         enable = lib.mkDefault true;
-        pulseaudio.enable = false;
       };
     };
 }

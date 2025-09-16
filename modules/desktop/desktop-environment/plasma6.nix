@@ -5,7 +5,7 @@
   config = lib.mkIf config.c-opt.plasma.enable {
     # Plasma6 related options.
     services = {
-      desktopManager.plasma.enable = true;
+      desktopManager.plasma6.enable = true;
       displayManager.sddm = {
         enable = true;
         wayland.enable = true;

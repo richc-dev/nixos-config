@@ -32,6 +32,6 @@
   };
 
   config = {
-    c-opt.homeDirectory = lib.mkDefault "/home/${config.c-opt.user.name}";
+    c-opt.user.homeDirectory = lib.mkDefault "/home/${config.c-opt.user.name}";
   };
 }

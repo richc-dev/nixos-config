@@ -7,10 +7,10 @@
   options.c-opt.nvidia.enable = lib.mkEnableOption "Enables the Nvidia config";
 
   config = lib.mkIf config.c-opt.nvidia.enable {
-    hardware = {
-      # Load nvidia driver for Xorg and Wayland
-      services.xserver.videoDrivers = [ "nvidia" ];
+    # Load nvidia driver for Xorg and Wayland
+    services.xserver.videoDrivers = [ "nvidia" ];
 
+    hardware = {
       # Enable OpenGL
       graphics.enable = true;
 

@@ -11,10 +11,12 @@ in
 {
   imports = [
     ./hardware.nix
+
+    ./../../modules/programs
   ];
 
   # Define the device's hostname.
-  networking.hostName = "rcc-latop";
+  networking.hostName = "rcc-laptop";
 
   boot = {
     # Enables the amd cpu scaling https://www.kernel.org/doc/html/latest/admin-guide/pm/amd-pstate.html

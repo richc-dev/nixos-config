@@ -1,5 +1,0 @@
-# User Home Manager config.
-
-{
-
-}

@@ -4,5 +4,6 @@
     ./system.nix
     ./hardware
     ./home-manager
+    ./desktop
   ];
 }

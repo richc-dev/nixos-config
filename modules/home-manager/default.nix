@@ -11,11 +11,6 @@ in
       { ... }:
       {
         # Common config.
-        imports = [
-          # Import user config.
-          ../../users/${config.c-opt.user.name}/home.nix
-        ];
-
         home = {
           stateVersion = config.c-opt.stateVersion;
           username = config.c-opt.user.name;

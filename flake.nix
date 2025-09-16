@@ -5,7 +5,7 @@
     # Nixpkgs branch to use (unstable in this case).
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # Nixpkgs stable branch.
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
     # Nix VSCode Extensions allows use of VSCodium extensions not in nixpkgs.
     # https://github.com/nix-community/nix-vscode-extensions
@@ -27,7 +27,8 @@
     nixpkgs,
     nixpkgs-stable,
     nix-vscode-extensions,
-    home-manager
+    home-manager,
+    impermanence
   }@inputs:
   let
     # Modules shared between all systems.
@@ -37,16 +38,20 @@
 
       ./modules
     ];
+
+    specialArgs = {
+      inherit nix-vscode-extensions;
+    };
   in
   {
     nixosConfigurations = {
       # Laptop config.
       rcc-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        inherit specialArgs;
 
         modules = sharedModules ++ [
           ./hosts/rcc-laptop
-          ./users
         ];
       };
 
