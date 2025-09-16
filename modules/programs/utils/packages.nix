@@ -33,7 +33,6 @@
       enable = true;
       # Enable garbage cleanup.
       clean.enable = true;
-      clean.args = "--keep-since 7d --keep 3";
       # System flake location.
       flake = "${config.c-opt.user.homeDirectory}/nixos-config";
     };

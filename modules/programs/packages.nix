@@ -17,22 +17,24 @@
       qalculate-gtk
       winetricks
       wineWowPackages.full
+
+      thunderbird
     ];
 
     programs = {
 
       keepassxc = {
         enable = true;
-        autostart = true;
+        #autostart = true;
       };
 
       mullvad-vpn = {
         enable = true;
       };
 
-      thunderbird = {
-        enable = true;
-      };
+      #thunderbird = {
+      #  enable = true;
+      #};
 
       vesktop = {
         enable = true;

@@ -5,5 +5,6 @@
     ./hardware
     ./home-manager
     ./desktop
+    ./programs
   ];
 }

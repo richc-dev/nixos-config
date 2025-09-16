@@ -1,5 +1,6 @@
 # Tools for working with images, audio, and videos.
 
+{ config, lib, pkgs, ... }:
 {
   options.c-opt.audio-video-progs.enable = lib.mkEnableOption "Audio/video/image editors/players";
 
@@ -11,7 +12,7 @@
         audacity
         dopamine
         inkscape-with-extensions
-        kirta
+        krita
         spotify
         vlc
       ];
