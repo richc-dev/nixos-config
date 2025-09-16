@@ -11,8 +11,6 @@ in
 {
   imports = [
     ./hardware.nix
-
-    ./../../modules/programs
   ];
 
   # Define the device's hostname.

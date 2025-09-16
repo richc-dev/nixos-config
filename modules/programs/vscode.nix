@@ -1,5 +1,5 @@
 # VSCode config.
-{ config, nix-vscode-extensions, pkgs, /*pkgs-stable,*/ ... }:
+{ config, lib, nix-vscode-extensions, pkgs, /*pkgs-stable,*/ ... }:
 {
   options.c-opt.vscodium.enable = lib.mkEnableOption "VSCodium";
 

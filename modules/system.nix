@@ -52,12 +52,6 @@
     printing.enable = lib.mkDefault true;
   };
 
-  environment.systemPackages = with pkgs; [
-    git
-    gparted
-    wget
-  ];
-
   # Set up the user.
   users.users.${config.c-opt.user.name} = {
     isNormalUser = true;

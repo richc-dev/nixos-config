@@ -3,7 +3,19 @@
   options.c-opt.browsers.enable = lib.mkEnableOption "Browsers";
 
   config = lib.mkIf config.c-opt.browsers.enable {
-    programs = {
+
+    home-manager.users.${config.c-opt.user.name}.programs {
+
+      home.packages = with pkgs; [
+        tor-browser
+      ];
+
+      # Install Brave
+      chromium = {
+        enable = true;
+        package = pkgs.brave;
+      };
+
       # Install LibreWolf.
       firefox = {
         enable = true;
@@ -29,6 +41,7 @@
           };
         };
       };
+
     };
   };
 }
