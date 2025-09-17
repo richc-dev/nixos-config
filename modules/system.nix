@@ -1,8 +1,18 @@
 { config, lib, pkgs, ... }:
 {
   nix = {
-    # Enable flakes.
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings = {
+      # Enable flakes.
+      experimental-features = [ "nix-command" "flakes" ];
+
+      substituters = [
+        "https://nix-community.cachix.org"
+        "https://cache.nixos.org/"
+      ];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+    };
 
     # Weekly garbage collection and store
     # optimization to help with storage space.

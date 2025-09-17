@@ -8,6 +8,9 @@
     home-manager.users.${config.c-opt.user.name} = {
       home.packages = [ pkgs.hyprlock ];
 
+      # path = ${../_assets/lockscreen.png}
+
+      # font_family = ${config.dc-tec.font}
       xdg.configFile."hypr/hyprlock.conf".text = ''
         general = {
           no_fade_in = false
@@ -16,7 +19,7 @@
         }
 
         background {
-          path = ${../_assets/lockscreen.png}
+
           blur_passes = 1;
           contrast = 0.8916;
           brightness = 0.8172;
@@ -42,7 +45,7 @@
           }
 
         lablel {
-          font_family = ${config.dc-tec.font}
+
           text = Yo..., Wassup!
           font_size = 25
           position = 0,300

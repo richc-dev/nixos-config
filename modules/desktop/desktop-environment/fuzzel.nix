@@ -18,7 +18,7 @@
             layer = "overlay";
             icon-theme = "Papirus-Dark";
             prompt = " ";
-            font = "${config.dc-tec.font}";
+            #font = "${config.dc-tec.font}";
           };
           colors = {
             background = "24273add";

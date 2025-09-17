@@ -32,8 +32,6 @@
         enable = true;
       };
 
-      ssh.startAgent = true;
-
       #thunderbird = {
       #  enable = true;
       #};
@@ -43,6 +41,10 @@
       };
 
     };
+  };
+
+  programs = {
+    ssh.startAgent = true;
   };
 
   services = {

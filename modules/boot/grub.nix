@@ -5,7 +5,7 @@
   config = lib.mkIf config.c-opt.grub.enable {
     boot.loader = {
       # Disable systemd-boot
-      systemd-boot.enable = lib.mkOverride false;
+      systemd-boot.enable = lib.mkForce false;
 
       # Enable grub.
       grub = {

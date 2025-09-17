@@ -3,6 +3,9 @@
   options.c-opt.plasma.enable = lib.mkEnableOption "Plasma 6 Desktop Environment";
 
   config = lib.mkIf config.c-opt.plasma.enable {
+    # Load Nvidia driver
+    services.xserver.videoDrivers = [ "nvidia" "amdgpu" ];
+
     # Plasma6 related options.
     services = {
       desktopManager.plasma6.enable = true;
