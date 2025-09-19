@@ -17,6 +17,12 @@
       description = "System timezone.";
     };
 
+    c-opt.laptop = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Whether the device is a laptop. Enables power saving features.";
+    };
+
     c-opt.persistence = {
       enable = lib.mkEnableOption "Enable persistence/impermanence";
     };

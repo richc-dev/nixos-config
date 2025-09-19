@@ -20,6 +20,7 @@
           pkgs.open-vsx.ms-python.python
           pkgs.open-vsx.pkief.material-icon-theme
           pkgs.open-vsx.arrterian.nix-env-selector
+          pkgs.vscode-marketplace.bbenoist.qml
         ];
       })
     ];

@@ -26,10 +26,10 @@
     };
 
     services = {
-      # Load Nvidia driver
+      # Load Nvidia driver.
       xserver.videoDrivers = [ "nvidia" "amdgpu" ];
 
-      # Load sddm
+      # Load sddm.
       displayManager.sddm = {
           enable = true;
           package = pkgs.kdePackages.sddm;
@@ -41,6 +41,9 @@
       };
     };
 
+    # Enable NixOS Hyprland module.
+    programs.hyprland.enable = true;
+
     home-manager.users.${config.c-opt.user.name} =
       { pkgs, ... }:
       {
@@ -50,8 +53,15 @@
           qt6.qtwayland
         ];
 
-        services.cliphist.enable = true;
+        services = {
+          cliphist.enable = true;
+          playerctld.enable = true;
+          # Enable Hyprpolkitagent
+          # https://wiki.hypr.land/Hypr-Ecosystem/hyprpolkitagent/
+          hyprpolkitagent.enable = true;
+        };
 
+        # Home manager Hyprland module.
         wayland.windowManager.hyprland = {
           enable = true;
           xwayland.enable = true;
@@ -83,6 +93,7 @@
 
             exec-once = [
               "$terminal"
+              "quickshell"
             ];
 
             # ######################

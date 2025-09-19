@@ -10,6 +10,7 @@
       gnucash
       hunspell
       libreoffice
+      obs-studio
       obsidian
       orca-slicer
       qbittorrent

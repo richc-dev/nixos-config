@@ -45,6 +45,7 @@ in
 
   c-opt = {
     stateVersion = "24.05";
+    laptop = true;
     persistence.enable = false;
   };
 }

@@ -4,7 +4,7 @@
     enable = lib.mkEnableOption "Quickshell";
   };
 
-  config = lib.mkIf config.c-opt.graphical.quickshell {
+  config = lib.mkIf config.c-opt.graphical.quickshell.enable {
 
     home-manager.users.${config.c-opt.user.name} =
     { ... }:
