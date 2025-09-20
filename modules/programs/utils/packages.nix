@@ -12,8 +12,9 @@
     # Drive/filesystems
     btrfs-progs
     gparted
+    udiskie
 
-    # Internet
+    # Internet/Connectivity
     curl
     wget
 

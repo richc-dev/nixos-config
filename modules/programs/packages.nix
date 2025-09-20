@@ -3,6 +3,7 @@
   home-manager.users.${config.c-opt.user.name} = {
     home.packages = with pkgs; [
       anki
+      clapper
       kdePackages.dolphin
       kdePackages.dolphin-plugins
       dropbox
@@ -10,9 +11,11 @@
       gnucash
       hunspell
       libreoffice
+      nomacs
       obs-studio
       obsidian
       orca-slicer
+      overskride
       qbittorrent
       readest
       qalculate-gtk
@@ -20,6 +23,8 @@
       wineWowPackages.full
 
       thunderbird
+
+      material-design-icons
     ];
 
     programs = {

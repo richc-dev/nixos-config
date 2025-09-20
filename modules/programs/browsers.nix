@@ -26,6 +26,23 @@
           policies = {
             DisableTelemetry = true;
             DisableFirefoxStudies = true;
+            SearchEngines {
+              Default = "Presearch";
+              Add = [
+                {
+                  Name = "Presearch";
+                  URLTemplate = "https://presearch.com/search?q={searchTerms}";
+                  IconURL = "https://na-us-2.presearch.com/images/icon.svg";
+                  Alias = "@ps";
+                }
+                {
+                  Name = "Merriam-Webster Dictionary";
+                  URLTemplate = "https://www.merriam-webster.com/dictionary/{searchTerms}";
+                  IconURL = "https://www.merriam-webster.com/favicon.svg";
+                  Alias = "@mw";
+                }
+              ];
+            };
             Preferences = {
               "privacy.resistFingerprinting" = false;
               "privacy.fingerprintingProtection" = true;
