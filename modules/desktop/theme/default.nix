@@ -16,9 +16,9 @@
           serif = [ config.c-opt.font ];
         };
       };
-      packages = with pkgs; {
-        nerd_fonts._0xproto
-      };
+      packages = with pkgs; [
+        nerd-fonts.dejavu-sans-mono
+      ];
     };
   };
 }

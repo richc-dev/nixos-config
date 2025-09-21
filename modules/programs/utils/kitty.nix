@@ -9,10 +9,10 @@
         enable = true;
         font = {
           name = config.c-opt.font;
-          size = 14;
+          size = 10;
         };
         settings = {
-          confirm_os_window_close = true;
+          confirm_os_window_close = 0;
         };
       };
     };

@@ -15,11 +15,18 @@
     impermanence.url = "github:nix-community/impermanence";
 
     # Home Manager
+    # Home Manager doesn't generate the configs when using `nixos-rebuid boot`
+    # command. And yes, I am an IDIOT who spent hours trying to figure out
+    # why Home Manager wasn't applying configs.
     # https://github.com/nix-community/home-manager
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Hyprland
+    # https://hypr.land
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = {
@@ -28,6 +35,7 @@
     nixpkgs-stable,
     nix-vscode-extensions,
     home-manager,
+    hyprland,
     impermanence
   }@inputs:
   let
@@ -41,6 +49,7 @@
 
     specialArgs = {
       inherit nix-vscode-extensions;
+      inherit hyprland;
     };
   in
   {

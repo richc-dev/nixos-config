@@ -26,7 +26,7 @@
           policies = {
             DisableTelemetry = true;
             DisableFirefoxStudies = true;
-            SearchEngines {
+            SearchEngines = {
               Default = "Presearch";
               Add = [
                 {

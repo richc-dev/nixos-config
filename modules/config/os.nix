@@ -27,7 +27,7 @@
     # `nixos-config/modules/desktop/theme/default.nix` under `fonts.packages`!
     c-opt.font = lib.mkOption {
       type = lib.types.str;
-      default = "0xProto Nerd Font";
+      default = "DejaVu Mono";
       description = "The system font.";
     };
 
