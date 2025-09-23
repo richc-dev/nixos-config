@@ -1,7 +1,10 @@
+# Configures laptop specific settings like power management.
+
 { config, lib, pkgs, ... }:
 {
   config = lib.mkIf config.c-opt.laptop {
     environment.systemPackages = with pkgs; [
+      brightnessctl
       powertop
     ];
 

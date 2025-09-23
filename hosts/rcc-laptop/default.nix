@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 let
 nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
     export __NV_PRIME_RENDER_OFFLOAD=1
@@ -45,7 +45,7 @@ in
 
   c-opt = {
     stateVersion = "24.05";
-    laptop = true;
+    laptop = lib.mkForce true;
     persistence.enable = false;
   };
 }

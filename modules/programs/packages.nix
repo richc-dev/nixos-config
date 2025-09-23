@@ -10,6 +10,7 @@
       freecad-wayland
       gnucash
       hunspell
+      kdePackages.kate
       libreoffice
       nomacs
       obs-studio

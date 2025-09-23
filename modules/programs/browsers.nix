@@ -41,6 +41,18 @@
                   IconURL = "https://www.merriam-webster.com/favicon.svg";
                   Alias = "@mw";
                 }
+                {
+                  Name = "Nix Packages";
+                  URLTemplate = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}";
+                  IconURL = "https://search.nixos.org/favicon.png";
+                  Alias = "@np";
+                }
+                {
+                  Name = "NixOS Options";
+                  URLTemplate = "https://search.nixos.org/options?channel=unstable&query={searchTerms}";
+                  IconURL = "https://search.nixos.org/favicon.png";
+                  Alias = "@no";
+                }
               ];
             };
             Preferences = {
