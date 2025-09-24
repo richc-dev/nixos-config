@@ -31,14 +31,14 @@
           };
           userDirs = {
             enable = true;
-            desktop = "$HOME/desktop";
-            documents = "$HOME/documents";
-            download = "$HOME/downloads";
-            music = "$HOME/music";
-            pictures = "$HOME/music";
-            publicShare = "$HOME/desktop";
-            templates = "$HOME/public";
-            videos = "$HOME/videos";
+            desktop = "$HOME/Desktop";
+            documents = "$HOME/Documents";
+            download = "$HOME/Downloads";
+            music = "$HOME/Music";
+            pictures = "$HOME/Pictures";
+            publicShare = "$HOME/Public";
+            templates = "$HOME/Templates";
+            videos = "$HOME/Videos";
           };
         };
       };
