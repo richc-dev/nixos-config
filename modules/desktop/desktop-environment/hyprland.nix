@@ -102,6 +102,7 @@
               "$terminal"
               # "quickshell"
               "hyprpaper"
+              "sh ~/nixos-config/scripts/random-wallpaper.sh"
             ];
 
             # ######################
