@@ -28,7 +28,7 @@
 
   home-manager.users.${config.c-opt.user.name} = {
     home.packages = with pkgs; [
-      ark
+      kdePackages.ark
       aubio
       gh
       lm_sensors
@@ -37,8 +37,6 @@
     ];
 
     programs = {
-      fish.enable = true;
-
       # Enable nh.
       # https://github.com/nix-community/nh
       nh = {

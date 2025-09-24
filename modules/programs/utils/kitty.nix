@@ -13,6 +13,7 @@
         };
         settings = {
           confirm_os_window_close = 0;
+          shell = if config.c-opt.terminal.fish.enable then "fish" else ".";
         };
       };
     };
