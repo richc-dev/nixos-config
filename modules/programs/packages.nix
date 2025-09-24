@@ -25,7 +25,7 @@
 
       thunderbird
 
-      material-design-icons
+      material-symbols
     ];
 
     programs = {
