@@ -16,7 +16,7 @@
 
     # Home Manager
     # Home Manager doesn't generate the configs when using `nixos-rebuid boot`
-    # command. And yes, I am an IDIOT who spent hours trying to figure out
+    # command. And yes, I am an IDIOT and spent hours trying to figure out
     # why Home Manager wasn't applying configs.
     # https://github.com/nix-community/home-manager
     home-manager = {
@@ -27,6 +27,13 @@
     # Hyprland
     # https://hypr.land
     hyprland.url = "github:hyprwm/Hyprland";
+
+    # Sops-nix
+    # https://github.com/Mic92/sops-nix
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }
   };
 
   outputs = {
@@ -36,13 +43,15 @@
     nix-vscode-extensions,
     home-manager,
     hyprland,
-    impermanence
+    impermanence,
+    sops-nix
   }@inputs:
   let
     # Modules shared between all systems.
     sharedModules = [
       impermanence.nixosModule
       home-manager.nixosModules.home-manager
+      sops-nix.nixosModules.sops
 
       ./modules
     ];
@@ -50,6 +59,7 @@
     specialArgs = {
       inherit nix-vscode-extensions;
       inherit hyprland;
+      inherit sops-nix;
     };
   in
   {

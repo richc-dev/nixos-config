@@ -6,6 +6,7 @@
     ./kitty.nix
     ./laptop.nix
     ./packages.nix
+    ./sops.nix
     ./starship.nix
   ];
 
