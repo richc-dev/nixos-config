@@ -18,8 +18,9 @@
       orca-slicer
       overskride
       qbittorrent
-      readest
       qalculate-gtk
+      readest
+      sops
       winetricks
       wineWowPackages.full
 
