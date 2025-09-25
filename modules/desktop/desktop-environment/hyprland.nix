@@ -101,7 +101,7 @@
             exec-once = [
               "$terminal"
               # "quickshell"
-              "hyprpaper"
+              #"hyprpaper"
               "sleep 1 ; exec sh /home/${config.c-opt.user.name}/nixos-config/scripts/random-wallpaper.sh"
             ];
 
@@ -149,7 +149,7 @@
               rounding_power = 1;
 
               # Change transparency of focused and unfocused windows
-              active_opacity = 1.0;
+              active_opacity = 0.95;
               inactive_opacity = 0.8;
 
               shadow = {

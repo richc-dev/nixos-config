@@ -29,14 +29,24 @@
     ];
 
     programs = {
+      mullvad-vpn = {
+        enable = true;
+        package = pkgs.mullvad-vpn;
+      };
 
       keepassxc = {
         enable = true;
-        #autostart = true;
-      };
+        autostart = true;
+        settings = {
+          Browser = {
+            Enabled = true;
+            UpdateBinaryPath = false;
+          };
 
-      mullvad-vpn = {
-        enable = true;
+          GUI = {
+            ApplicationTheme = "dark";
+          };
+        };
       };
 
       #thunderbird = {
@@ -58,5 +68,6 @@
     openssh.enable = true;
 
     resolved.enable = true;
+    mullvad-vpn.enable = true;
   };
 }
