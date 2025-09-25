@@ -20,6 +20,7 @@
 
     # Other
     git
+    ripgrep
   ];
 
   services = {
