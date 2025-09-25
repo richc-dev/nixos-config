@@ -20,5 +20,21 @@
         nerd-fonts.dejavu-sans-mono
       ];
     };
+
+    home-manager.users.${config.c-opt.user.name} = {
+      # GTK theme.
+      gtk = {
+        enable = true;
+        colorScheme = "dark";
+      };
+
+      # Qt theme.
+      qt = {
+        enable = true;
+        platformTheme.name = "kvantum";
+        style.name = "kvantum";
+      };
+    };
+
   };
 }
