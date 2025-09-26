@@ -18,14 +18,14 @@
             layer = "overlay";
             icon-theme = "Papirus-Dark";
             prompt = " ";
-            #font = "${config.dc-tec.font}";
+            font = "${config.c-opt.font}";
           };
           colors = {
-            background = "24273add";
-            text = "cad3f5ff";
-            selection = "5b6078ff";
-            selection-text = "cad3f5ff";
-            border = "b7bdf8ff";
+            background = "1b1b1bdd";
+            text = "e8e8e8ff";
+            selection = "707070ff";
+            selection-text = "b7b7b7ff";
+            border = "e8e8e8ff";
             match = "ed8796ff";
             selection-match = "ed8796ff";
           };

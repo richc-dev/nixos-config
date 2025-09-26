@@ -248,6 +248,7 @@
             # ############
             # See https://wiki.hypr.land/Configuring/Binds/
             bind = [
+              # Programs
               "$mod, Q, exec, $terminal"
               "$mod, C, killactive,"
               "$mod, M, exit,"
@@ -257,6 +258,7 @@
               "$mod, P, pseudo,"
               "$mod, J, togglesplit,"
               "$mod, B, exec, $browser"
+              "$mod, F, exec, fuzzel"
 
               # Move focus with $mod + arrow keys
               "$mod, left, movefocus, l"

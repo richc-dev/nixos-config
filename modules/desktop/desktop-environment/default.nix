@@ -15,7 +15,7 @@
   c-opt = {
     plasma.enable = lib.mkDefault false;
     graphical = {
-#       fuzzel.enable = lib.mkDefault true;
+      fuzzel.enable = lib.mkDefault true;
       hyprland.enable = lib.mkDefault true;
       hyprpaper.enable = lib.mkDefault true;
       quickshell.enable = lib.mkDefault true;
