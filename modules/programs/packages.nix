@@ -37,7 +37,6 @@
 
       keepassxc = {
         enable = true;
-        autostart = true;
         settings = {
           Browser = {
             Enabled = true;
