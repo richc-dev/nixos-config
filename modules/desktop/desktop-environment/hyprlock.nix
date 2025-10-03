@@ -1,60 +1,87 @@
 # Hyprlock config.
-# https://github.com/hyprwm/hyprlock
+# https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/
 
 { config, lib, pkgs, ... }:
 {
   config = lib.mkIf config.c-opt.graphical.hyprland.enable {
 
     home-manager.users.${config.c-opt.user.name} = {
-      home.packages = [ pkgs.hyprlock ];
-
-      # path = ${../_assets/lockscreen.png}
-
-      # font_family = ${config.dc-tec.font}
-      xdg.configFile."hypr/hyprlock.conf".text = ''
-        general = {
-          no_fade_in = false
-          grace = 0
-          disable_loading_bar = true
-        }
-
-        background {
-
-          blur_passes = 1;
-          contrast = 0.8916;
-          brightness = 0.8172;
-          vibrancy = 0.1696;
-          vibrancy_darkness = 0.0;
-        }
-
-        input-field {
-          size = 250, 60
-          outline_thickness = 2
-          dots_size = 0.2
-          dots_spacing = 0.2
-          dots_center = true
-          outer_color = rgba(0, 0, 0, 0)
-          inner_color = rgba(0, 0, 0, 0.5)
-          font_color = rgb(200, 200, 200)
-          fade_on_empty = false
-          placeholder_text = <i>Feed me your secret...</i>
-          hide_input = false
-          position = 0,0
-          halign = center
-          valign = center
-          }
-
-        lablel {
-
-          text = Yo..., Wassup!
-          font_size = 25
-          position = 0,300
-          halign = center
-          valign = center
-        }
-      '';
-    };
+    # Required for hyprlock.
+    # https://mynixos.com/home-manager/option/programs.hyprlock.enable
     security.pam.services.hyprlock = {};
+
+    programs.hyprlock = {
+      enable = true;
+      settings = {
+        "$font" = ${config.c-opt.font};
+
+        animations = {
+          enable = true;
+          bezier = "linear, 1, 1, 0, 0";
+          animations = [
+            "fadeIn, 1, 5, linear"
+            "fadeOut, 1, 5, linear"
+            "inputFieldDots, 1, 2, linear"
+          ];
+        };
+
+        background = {
+          monitor = "";
+          path = "screenshot";
+          blur_passes = 3;
+        };
+
+        input-field = {
+          monitor = "";
+          size = "20%, 5%";
+          outline_thickness = 3;
+          inner_color = "rgba(0, 0, 0, 0)";
+
+          outer_color = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+          check_color = "rgba(00ff99ee) rgba(ff6633ee) 120deg";
+          fail_color = "rgba(ff6633ee) rgba(ff0066ee) 40deg";
+
+          font_color = "rgb(143, 143, 143)";
+          fade_on_empty = false;
+          rounding = 15;
+
+          font_family = "$font";
+          placeholder_text = "Input password...";
+          fail_text = "$PAMFAIL";
+
+          dots_spacing = 0.3;
+
+          position = "0, -20";
+          halign = "center";
+          valign = "center";
+        };
+
+        # Time.
+        label = {
+          monitor = "";
+          text = "$TIME";
+          font_size = 90;
+          font_family = "$font";
+
+          position = "-30, 0";
+          halign = "right";
+          valign = "top";
+        };
+
+        # Date.
+        label = {
+          monitor = "";
+          text = "cmd[update:60000] date +\"%A, %d %B %Y\""; # update every 60 seconds
+          font_size = 25;
+          font_family = "$font";
+
+          position = "-30, -150";
+          halign = "right";
+          valign = "top";
+        };
+
+      };
+    };
 
   };
 }

@@ -4,8 +4,9 @@
     ./plasma6.nix
 
     ./fuzzel.nix
+    ./hypridle.nix
     ./hyprland.nix
-#     ./hyprlock.nix
+    ./hyprlock.nix
     ./hyprpaper.nix
     ./quickshell.nix
 #     ./wlogout.nix
