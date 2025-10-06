@@ -100,8 +100,8 @@
 
             exec-once = [
               "$terminal"
+              "hypridle"
               # "quickshell"
-              #"hyprpaper"
               "sleep 1 ; exec sh /home/${config.c-opt.user.name}/nixos-config/scripts/random-wallpaper.sh"
             ];
 
