@@ -7,6 +7,7 @@
       kdePackages.dolphin
       kdePackages.dolphin-plugins
       dropbox
+      perl540Packages.FinanceQuote
       freecad-wayland
       gnucash
       hunspell
