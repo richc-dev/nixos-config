@@ -1,6 +1,4 @@
-# Defines custom config options for the operating system so
-# they don't need to be defined in the flake and passed
-# with `specialArgs`.
+# Defines custom config options for the operating system.
 
 { config, lib, ... }:
 {
@@ -30,13 +28,5 @@
       default = "DejaVu Mono";
       description = "The system font.";
     };
-
-    c-opt.persistence = {
-      enable = lib.mkEnableOption "Enable persistence/impermanence";
-    };
-  };
-
-  config = {
-    c-opt.persistence.enable = lib.mkDefault false;
   };
 }

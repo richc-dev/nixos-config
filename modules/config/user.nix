@@ -1,6 +1,4 @@
-# Defines custom config options for users so they
-# don't need to be defined in the flake and passed
-# with `specialArgs`.
+# Defines custom config options for users.
 
 { config, lib, pkgs, ... }:
 {
