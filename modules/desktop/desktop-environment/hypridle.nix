@@ -3,7 +3,9 @@
 
 { config, lib, pkgs, ... }:
 {
-  config = lib.mkIf config.c-opt.graphical.hyprland.enable {
+  options.c-opt.graphical.hypridle.enable = lib.mkEnableOption "Enable Hypridle";
+
+  config = lib.mkIf config.c-opt.graphical.hypridle.enable {
 
     home-manager.users.${config.c-opt.user.name} = {
       home.packages = with pkgs; [ hypridle ];
