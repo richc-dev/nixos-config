@@ -13,12 +13,12 @@
       hunspell
       kdePackages.kate
       libreoffice
+      mpv
       nomacs
       obs-studio
       obsidian
       orca-slicer
       overskride
-      qbittorrent
       qalculate-gtk
       readest
       sops
@@ -26,8 +26,6 @@
       wineWowPackages.full
 
       thunderbird
-
-      material-symbols
     ];
 
     programs = {
