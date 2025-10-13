@@ -18,6 +18,8 @@
       };
       packages = with pkgs; [
         nerd-fonts.dejavu-sans-mono
+        rubik
+        material-symbols
       ];
     };
 
