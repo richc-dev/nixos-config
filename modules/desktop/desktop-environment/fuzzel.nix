@@ -22,12 +22,12 @@
           };
           colors = {
             background = "1b1b1bdd";
-            text = "e8e8e8ff";
+            text = "b7b7b7ff";
             selection = "707070ff";
-            selection-text = "b7b7b7ff";
+            selection-text = "e8e8e8ff";
             border = "e8e8e8ff";
-            match = "ed8796ff";
-            selection-match = "ed8796ff";
+            match = "ffffffff";
+            selection-match = "ffffffff";
           };
           border = {
             radius = "10";

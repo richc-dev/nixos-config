@@ -125,8 +125,8 @@
             # https://wiki.hypr.land/Configuring/Variables/#general
 
             general = {
-              gaps_in = 5;
-              gaps_out = 5;
+              gaps_in = 2;
+              gaps_out = 2;
 
               border_size = 2;
 
