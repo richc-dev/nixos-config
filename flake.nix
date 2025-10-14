@@ -34,6 +34,11 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -41,6 +46,7 @@
     nixpkgs,
     nixpkgs-stable,
     nix-vscode-extensions,
+    caelestia-shell,
     home-manager,
     hyprland,
     impermanence,
@@ -54,19 +60,22 @@
       sops-nix.nixosModules.sops
 
       ./modules
+      ./overlays
     ];
 
     specialArgs = {
       inherit nix-vscode-extensions;
       inherit hyprland;
       inherit sops-nix;
+      inherit caelestia-shell;
+      system = "x86_64-linux";
     };
   in
   {
     nixosConfigurations = {
       # Laptop config.
       rcc-laptop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = specialArgs.system;
         inherit specialArgs;
 
         modules = sharedModules ++ [

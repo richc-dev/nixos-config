@@ -1,15 +1,10 @@
 { config, lib, pkgs, ... }:
-let
-  user = config.c-opt.user.name;
-in
 {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
 
-    users.${user} =
-      { ... }:
-      {
+    users.${config.c-opt.user.name} = {
         # Common config.
         home = {
           stateVersion = config.c-opt.stateVersion;

@@ -19,9 +19,9 @@
     graphical = {
       caelestia.enable = lib.mkDefault true;
       fuzzel.enable = lib.mkDefault true;
-      hypridle.enable = lib.mkDefault false;
+      hypridle.enable = lib.mkDefault true;
       hyprland.enable = lib.mkDefault true;
-      hyprpaper.enable = lib.mkDefault false;
+      hyprpaper.enable = lib.mkDefault true;
       quickshell.enable = lib.mkDefault true;
       xdg.enable = lib.mkDefault true;
     };

@@ -1,6 +1,10 @@
-{ inputs, ... }:
+{ caelestia-shell, nixpkgs-stable, system, ... }:
 {
-  pkgs-stable = final: prev: {
-    stable = import inputs.nixpkgs-stable {system = final.system;};
-  };
+  nixpkgs.overlays = [
+    (final: prev: {
+      stable = nixpkgs-stable;
+      caelestia-shell = caelestia-shell.packages.${system}.caelestia-shell;
+      caelestia-cli = caelestia-shell.inputs.caelestia-cli.packages.${system}.caelestia-cli;
+    })
+  ];
 }

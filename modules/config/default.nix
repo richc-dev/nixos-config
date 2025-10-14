@@ -3,7 +3,7 @@
 
 {
   imports = [
-    #./impermancence.nix
+    ./impermanence.nix
     ./os.nix
     ./user.nix
   ];

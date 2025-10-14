@@ -46,6 +46,5 @@ in
   c-opt = {
     stateVersion = "24.05";
     laptop = lib.mkForce true;
-    persistence.enable = false;
   };
 }

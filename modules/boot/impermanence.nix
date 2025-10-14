@@ -5,5 +5,5 @@
 {
   config = lib.mkIf config.c-opt.impermanence.enable {
 
-  }
+  };
 }
