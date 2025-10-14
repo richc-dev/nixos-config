@@ -16,6 +16,7 @@
       enable = true;
       librewolf.enable = true;
     };
+    dev-tools.enable = true;
     vscodium.enable = true;
   };
 }

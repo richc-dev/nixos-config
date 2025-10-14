@@ -2,6 +2,7 @@
 {
   home-manager.users.${config.c-opt.user.name} = {
     home.packages = with pkgs; [
+      android-file-transfer
       anki
       clapper
       kdePackages.dolphin

@@ -12,7 +12,6 @@
           caelestia-shell
           caelestia-cli
         ];
-
       };
   };
 }
