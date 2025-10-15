@@ -62,20 +62,30 @@
       ./modules
       ./overlays
     ];
-
-    specialArgs = {
-      inherit nix-vscode-extensions;
-      inherit hyprland;
-      inherit sops-nix;
-      inherit caelestia-shell;
-      system = "x86_64-linux";
-    };
   in
   {
     nixosConfigurations = {
       # Laptop config.
-      rcc-laptop = nixpkgs.lib.nixosSystem {
-        system = specialArgs.system;
+      rcc-laptop =
+      let
+        system = "x86_64-linux";
+
+        # Add stable nix packages channel.
+        pkgs-stable = import nixpkgs-stable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+
+        specialArgs = {
+          inherit caelestia-shell;
+          inherit hyprland;
+          inherit pkgs-stable;
+          inherit nix-vscode-extensions;
+          inherit sops-nix;
+        };
+      in
+      nixpkgs.lib.nixosSystem {
+        system = system;
         inherit specialArgs;
 
         modules = sharedModules ++ [

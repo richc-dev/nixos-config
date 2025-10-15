@@ -1,5 +1,5 @@
 # VSCode config.
-{ config, lib, nix-vscode-extensions, pkgs, /*pkgs-stable,*/ ... }:
+{ config, lib, nix-vscode-extensions, pkgs, pkgs-stable, ... }:
 {
   options.c-opt.vscodium.enable = lib.mkEnableOption "VSCodium";
 
@@ -15,7 +15,7 @@
         vscodeExtensions = [
           pkgs.open-vsx.bbenoist.nix
           pkgs.open-vsx.editorconfig.editorconfig
-          # pkgs-stable.vscode-extensions.devsense.phptools-vscode
+          pkgs-stable.vscode-extensions.devsense.phptools-vscode
           pkgs.vscode-marketplace.ms-python.vscode-pylance
           pkgs.open-vsx.ms-python.python
           pkgs.open-vsx.pkief.material-icon-theme
