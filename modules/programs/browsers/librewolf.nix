@@ -1,8 +1,8 @@
 { config, lib, pkgs, ... }:
 {
-  options.c-opt.browsers.librewolf.enable = lib.mkEnableOption "Librewolf";
+  options.c-opt.programs.browsers.librewolf.enable = lib.mkEnableOption "Librewolf";
 
-  config = lib.mkIf config.c-opt.browsers.librewolf.enable {
+  config = lib.mkIf config.c-opt.programs.browsers.librewolf.enable {
     home-manager.users.${config.c-opt.user.name}.programs = {
       # Install LibreWolf.
       firefox = {

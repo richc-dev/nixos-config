@@ -9,7 +9,8 @@
       kdePackages.kate
       orca-slicer
       qalculate-gtk
-      wineWowPackages.waylandFull
+      winetricks
+      wineWowPackages.stagingFull
 
       thunderbird
     ];

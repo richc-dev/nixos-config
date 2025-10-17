@@ -2,9 +2,9 @@
 
 { config, lib, pkgs, ... }:
 {
-  options.c-opt.imagePrograms.enable = lib.mkEnableOption "Install image editing/viewing programs";
+  options.c-opt.programs.image.enable = lib.mkEnableOption "Install image editing/viewing programs";
 
-  config = lib.mkIf config.c-opt.imagePrograms.enable {
+  config = lib.mkIf config.c-opt.programs.image.enable {
 
     home-manager.users.${config.c-opt.user.name}.home = {
       packages = with pkgs; [

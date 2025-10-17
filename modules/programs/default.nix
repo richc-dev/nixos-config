@@ -4,24 +4,28 @@
     ./audio
     ./browsers
     ./games
-    ./images
+    ./image
     ./office
     ./privacy
     ./programming
     ./utils
-    ./videos
+    ./video
     ./packages.nix
   ];
 
   c-opt.programs = {
     audio.enable = lib.mkDefault true;
-    browsers.enable = lib.mkDefault true;
+    browsers = {
+      enable = lib.mkDefault true;
+      librewolf.enable = lib.mkDefault true;
+    };
+    image.enable = lib.mkDefault true;
+    office.enable = lib.mkDefault true;
     privacy.enable = lib.mkDefault true;
     programming = {
       enable = lib.mkDefault true;
       vscodium.enable = lib.mkDefault true;
     };
-    image = lib.mkDefault true;
     utils = {
       enable = lib.mkDefault true;
       gui.enable = lib.mkDefault true;

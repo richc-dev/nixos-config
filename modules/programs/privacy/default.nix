@@ -3,19 +3,18 @@
 # https://www.passwordstore.org/
 # https://dyne.org/tomb/
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
   options.c-opt.programs.privacy.enable = lib.mkEnableOption "Enable Privacy Focused Programs";
 
   config = lib.mkIf config.c-opt.programs.privacy.enable {
     home-manager.users.${config.c-opt.user.name} = {
       home.packages = with pkgs; [
-        pass.withExensions(exts: with exts; [
-          pass-audit
-          pass-genphrase
-          pass-tomb
-          pass-update
-        ])
+        pass
+        passExtensions.pass-audit
+        passExtensions.pass-genphrase
+        passExtensions.pass-tomb
+        passExtensions.pass-update
         ripasso-cursive
         tomb
       ];
