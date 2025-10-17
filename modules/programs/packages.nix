@@ -4,51 +4,17 @@
     home.packages = with pkgs; [
       android-file-transfer
       anki
-      clapper
-      kdePackages.dolphin
-      kdePackages.dolphin-plugins
       dropbox
-      perl540Packages.FinanceQuote
       freecad-wayland
-      gnucash
-      hunspell
       kdePackages.kate
-      libreoffice
-      mpv
-      nomacs
-      obs-studio
-      obsidian
       orca-slicer
-      overskride
       qalculate-gtk
-      readest
-      sops
-      winetricks
-      wineWowPackages.full
+      wineWowPackages.waylandFull
 
       thunderbird
     ];
 
     programs = {
-      mullvad-vpn = {
-        enable = true;
-        package = pkgs.mullvad-vpn;
-      };
-
-      keepassxc = {
-        enable = true;
-        settings = {
-          Browser = {
-            Enabled = true;
-            UpdateBinaryPath = false;
-          };
-
-          GUI = {
-            ApplicationTheme = "dark";
-          };
-        };
-      };
-
       #thunderbird = {
       #  enable = true;
       #};
@@ -58,16 +24,5 @@
       };
 
     };
-  };
-
-  programs = {
-    ssh.startAgent = true;
-  };
-
-  services = {
-    openssh.enable = true;
-
-    resolved.enable = true;
-    mullvad-vpn.enable = true;
   };
 }

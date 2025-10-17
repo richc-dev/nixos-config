@@ -12,13 +12,6 @@
 
   config = lib.mkIf config.c-opt.graphical.hyprland.enable {
 
-    # Install some useful Wayland utilities.
-    environment.systemPackages = with pkgs; [
-      grim
-      slurp
-      wl-clipboard
-    ];
-
     # Set up cache for Hyprland.
     nix.settings = {
       substituters = [ "https://hyprland.cachix.org" ];

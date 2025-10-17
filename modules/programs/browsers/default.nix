@@ -3,6 +3,9 @@
   options.c-opt.browsers.enable = lib.mkEnableOption "Browsers";
 
   config = lib.mkIf config.c-opt.browsers.enable {
+    imports = [
+      ./librewolf.nix
+    ];
 
     home-manager.users.${config.c-opt.user.name} = {
 

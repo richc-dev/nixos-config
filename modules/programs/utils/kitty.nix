@@ -1,9 +1,11 @@
 # Kitty terminal config.
 # https://github.com/kovidgoyal/kitty
 
-{ config, ... }:
+{ config, lib, ... }:
 {
-  config = {
+  options.c-opt.programs.utils.terminal.enable = lib.mkEnableOption "Enable Kitty";
+
+  config = lib.mkIf config.c-opt.programs.utils.terminal.enable {
     home-manager.users.${config.c-opt.user.name} = {
       programs.kitty = {
         enable = true;

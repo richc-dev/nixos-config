@@ -2,9 +2,12 @@
 
 { config, lib, pkgs, ... }:
 {
-  options.c-opt.dev-tools.enable = lib.mkEnableOption "Development tools";
+  options.c-opt.programs.programming.enable = lib.mkEnableOption "Development tools";
 
-  config = lib.mkIf config.c-opt.dev-tools.enable {
+  config = lib.mkIf config.c-opt.programs.programming.enable {
+    imports = [
+      ./vscodium.nix
+    ];
 
     home-manager.users.${config.c-opt.user.name}.home = {
       packages = with pkgs; [

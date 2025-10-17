@@ -1,9 +1,9 @@
 # VSCode config.
 { config, lib, nix-vscode-extensions, pkgs, pkgs-stable, ... }:
 {
-  options.c-opt.vscodium.enable = lib.mkEnableOption "VSCodium";
+  options.c-opt.programs.programming.vscodium.enable = lib.mkEnableOption "VSCodium";
 
-  config = lib.mkIf config.c-opt.vscodium.enable {
+  config = lib.mkIf config.c-opt.programs.programming.vscodium.enable {
 
     nixpkgs.overlays = [
       nix-vscode-extensions.overlays.default

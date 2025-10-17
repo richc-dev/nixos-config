@@ -1,5 +1,9 @@
 { config, lib, pkgs, sops-nix, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    sops
+  ];
+
   sops = {
     defaultSopsFile = ../../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
