@@ -24,6 +24,8 @@
             enable = true;
             defaultApplications = {
               "text/html" = "librewolf.desktop";
+              "video/mp4" = "mpv.desktop";
+              "video/mkv" = "mpv.desktop";
               "x-scheme-handler/http" = "librewolf.desktop";
               "x-scheme-handler/https" = "librewolf.desktop";
               "x-scheme-handler/about" = "librewolf.desktop";
