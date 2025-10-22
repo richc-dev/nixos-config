@@ -15,6 +15,7 @@
         home.packages = with pkgs; [
           xdg-user-dirs
           xdg-utils
+          libsForQt5.kservice
         ];
 
         xdg = {
@@ -23,6 +24,10 @@
           mimeApps = {
             enable = true;
             defaultApplications = {
+              "image/png" = "nomacs.desktop";
+              "image/jpeg" = "nomacs.desktop";
+              "image/svg+xml" = "inkscape.desktop";
+              "text/plain" = "emacs.desktop";
               "text/html" = "librewolf.desktop";
               "video/mp4" = "mpv.desktop";
               "video/mkv" = "mpv.desktop";
