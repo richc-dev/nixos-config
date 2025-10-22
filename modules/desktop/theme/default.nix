@@ -23,6 +23,11 @@
       ];
     };
 
+    qt = {
+      enable = true;
+      style = "adwaita-dark";
+    };
+
     home-manager.users.${config.c-opt.user.name} = {
       # GTK theme.
       gtk = {
@@ -37,8 +42,8 @@
       # Qt theme.
       qt = {
         enable = true;
-        platformTheme.name = "kvantum";
-        style.name = "kvantum";
+        platformTheme.name = "adwaita-dark";
+        style.name = "adwaita-dark";
       };
     };
 
