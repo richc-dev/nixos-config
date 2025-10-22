@@ -244,7 +244,6 @@
               # Programs
               "$mod, Q, exec, $terminal"
               "$mod, C, killactive,"
-              "$mod, M, exit,"
               "$mod, E, exec, $fileManager"
               "$mod, V, togglefloating,"
               "$mod, R, exec, $menu"
@@ -252,6 +251,12 @@
               "$mod, J, togglesplit,"
               "$mod, B, exec, $browser"
               "$mod, F, exec, fuzzel"
+
+              # Screenshots
+              "$mod, S, exec, grim - | wl-copy"
+              "$mod SHIFT, S, exec, grim -g \"$(slurp)\" - | wl-copy"
+              "$mod, S, exec, grim - | swappy -f -"
+              "$mod SHIFT, S, exec, grim -g \"$(slurp)\" - | swappy -f -"
 
               # Move focus with $mod + arrow keys
               "$mod, left, movefocus, l"
@@ -284,8 +289,8 @@
               "$mod SHIFT, 0, movetoworkspace, 10"
 
               # Example special workspace (scratchpad)
-              "$mod, S, togglespecialworkspace, magic"
-              "$mod SHIFT, S, movetoworkspace, special:magic"
+              "$mod, M, togglespecialworkspace, magic"
+              "$mod SHIFT, M, movetoworkspace, special:magic"
 
               # Scroll through existing workspaces with $mod + scroll
               "$mod, mouse_down, workspace, e+1"
@@ -322,6 +327,7 @@
             windowrule = [
               "suppressevent maximize, class:.*"
               "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen0,pinned:0"
+              "opaque, class:mpv"
             ];
 
             # systemd.enable = true;
