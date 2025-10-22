@@ -255,8 +255,8 @@
               # Screenshots
               "$mod, S, exec, grim - | wl-copy"
               "$mod SHIFT, S, exec, grim -g \"$(slurp)\" - | wl-copy"
-              "$mod, S, exec, grim - | swappy -f -"
-              "$mod SHIFT, S, exec, grim -g \"$(slurp)\" - | swappy -f -"
+              "$mod ALT, S, exec, grim - | swappy -f -"
+              "$mod ALT+SHIFT, S, exec, grim -g \"$(slurp)\" - | swappy -f -"
 
               # Move focus with $mod + arrow keys
               "$mod, left, movefocus, l"
