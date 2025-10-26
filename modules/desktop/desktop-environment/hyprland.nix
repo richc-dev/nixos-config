@@ -8,6 +8,11 @@
 {
   options.c-opt.graphical.hyprland = {
     enable = lib.mkEnableOption "hyprland wm";
+    monitors = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [ ", preferred, auto, auto" ];
+      description = "Per-device monitor config.";
+    };
   };
 
   config = lib.mkIf config.c-opt.graphical.hyprland.enable {
@@ -70,9 +75,7 @@
 
             # See https://wiki.hypr.land/Configuring/Monitors/
 
-            monitor = [
-              ",preferred,auto,auto"
-            ];
+            monitor = config.c-opt.graphical.hyprland.monitors;
 
             # #########
             # PROGRAMS
@@ -253,9 +256,8 @@
               "$mod, F, exec, fuzzel"
 
               # Screenshots
-              "$mod, S, exec, grim - | wl-copy"
+              "$mod, S, exec, grim - | swappy -f -"
               "$mod SHIFT, S, exec, grim -g \"$(slurp)\" - | wl-copy"
-              "$mod ALT, S, exec, grim - | swappy -f -"
               "$mod ALT+SHIFT, S, exec, grim -g \"$(slurp)\" - | swappy -f -"
 
               # Move focus with $mod + arrow keys

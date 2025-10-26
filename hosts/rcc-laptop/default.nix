@@ -44,6 +44,14 @@ in
   };
 
   c-opt = {
+    graphical = {
+      hyprland = {
+        monitors = [
+          "eDP-1, 1920x1080@120, 0x0, 1.5"
+          ", preferred, auto, auto"
+        ];
+      };
+    };
     stateVersion = "24.05";
     laptop = lib.mkForce true;
   };
