@@ -63,11 +63,15 @@
   };
 
   # Set up the user.
-  users.users.${config.c-opt.user.name} = {
-    isNormalUser = true;
-    hashedPasswordFile = config.sops.secrets."users/${config.c-opt.user.name}".path;
-    description = config.c-opt.user.fullName;
-    extraGroups = [ "networkmanager" "wheel" "daemon" ];
+  users = {
+    mutableUsers = false;
+
+    users.${config.c-opt.user.name} = {
+      isNormalUser = true;
+      hashedPasswordFile = config.sops.secrets."users/${config.c-opt.user.name}".path;
+      description = config.c-opt.user.fullName;
+      extraGroups = [ "networkmanager" "wheel" "daemon" ];
+    };
   };
 
   nix.settings.trusted-users = [ config.c-opt.user.name ];
