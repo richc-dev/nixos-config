@@ -57,8 +57,8 @@
               "privacy.fingerprintingProtection.overrides" = "+AllTargets,-CSSPrefersColorScheme";
             };
             ExtensionSettings = {
-              "browser-extension@mullvad.net" = {
-                install_url = "https://cdn.mullvad.net/browser-extension/0.9.5/mullvad-browser-extension-0.9.5.xpi";
+              "{d19a89b9-76c1-4a61-bcd4-49e8de916403}" = {
+                install_url = "https://github.com/mullvad/browser-extension/releases/download/v0.9.5-firefox-beta/mullvad-browser-extension-0.9.5.xpi";
                 installation_mode = "force_installed";
               };
               "passff@invicem.pro" = {

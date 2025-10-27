@@ -47,7 +47,7 @@ in
     graphical = {
       hyprland = {
         monitors = [
-          "eDP-1, 1920x1080@120, 0x0, 1.5"
+          "eDP-1, 1920x1080@120, 0x0, auto"
           ", preferred, auto, auto"
         ];
       };
