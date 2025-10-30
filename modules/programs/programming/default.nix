@@ -17,6 +17,7 @@
         godot_4
         netbeans
         php
+        php84Packages.composer
         python313
         zap
       ];
