@@ -1,23 +1,17 @@
 { config, lib, ... }:
 {
   imports = [
-    ./plasma6.nix
-
-    ./caelestia.nix
     ./fuzzel.nix
     ./hypridle.nix
     ./hyprland.nix
     ./hyprlock.nix
     ./hyprpaper.nix
     ./quickshell.nix
-#     ./wlogout.nix
     ./xdg.nix
   ];
 
   c-opt = {
-    plasma.enable = lib.mkDefault false;
     graphical = {
-      caelestia.enable = lib.mkDefault false;
       fuzzel.enable = lib.mkDefault true;
       hypridle.enable = lib.mkDefault true;
       hyprland.enable = lib.mkDefault true;
