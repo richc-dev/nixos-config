@@ -7,6 +7,9 @@
     xdg.portal = {
       enable = true;
       wlr.enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+      ];
     };
 
     home-manager.users.${config.c-opt.user.name} =
