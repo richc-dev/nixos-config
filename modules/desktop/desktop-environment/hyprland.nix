@@ -24,8 +24,11 @@
     };
 
     services = {
-      # Load Nvidia driver.
-      xserver.videoDrivers = [ "nvidia" "amdgpu" ];
+      xserver = {
+        exportConfiguration = true;
+        # Load Nvidia driver.
+        videoDrivers = [ "nvidia" "amdgpu" ];
+      };
 
       # Load sddm.
       displayManager.sddm = {
@@ -226,7 +229,9 @@
 
             # See https://wiki.hypr.land/Configuring/Variables/#input
             input = {
-              kb_layout = "us";
+              kb_layout = "us, us";
+              kb_variant = ", colemak_dh";
+              kb_options = "grp:win_space_toggle, ctrl:swapcaps";
               follow_mouse = true;
               touchpad = {
                 natural_scroll = false;
