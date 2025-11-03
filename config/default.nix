@@ -5,6 +5,7 @@
   imports = [
     ./impermanence.nix
     ./os.nix
+    ./theme.nix
     ./user.nix
   ];
 }

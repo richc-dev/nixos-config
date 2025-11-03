@@ -5,22 +5,32 @@
   };
 
   config = lib.mkIf config.c-opt.graphical.theme.enable {
+    environment.systemPackages = [
+      pkgs.hyprcursor
+      # pkgs.rose-pine-hyprcursor
+    ];
+
+    stylix = {
+      enable = true;
+      # polarity = config.c-opt.theme.colorScheme;
+      # Cursor settings
+      cursor = config.c-opt.theme.cursor;
+      # Fonts
+      fonts = config.c-opt.theme.fonts;
+    };
+
     fonts = {
       enableDefaultPackages = true;
       fontDir.enable = true;
-      fontconfig = {
-        enable = true;
-        defaultFonts = {
-          monospace = [ config.c-opt.font ];
-          sansSerif = [ config.c-opt.font ];
-          serif = [ config.c-opt.font ];
-        };
-      };
-      packages = with pkgs; [
-        nerd-fonts.dejavu-sans-mono
-        rubik
-        material-symbols
-      ];
+      # fontconfig = {
+      #   enable = true;
+      #   defaultFonts = {
+      #     monospace = [ config.c-opt.font ];
+      #     sansSerif = [ config.c-opt.font ];
+      #     serif = [ config.c-opt.font ];
+      #   };
+      # };
+      packages = config.c-opt.theme.fonts.additionalPkgs;
     };
 
     qt = {

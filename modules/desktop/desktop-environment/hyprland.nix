@@ -100,7 +100,6 @@
             exec-once = [
               "$terminal"
               "hypridle"
-              # "quickshell"
               "sleep 1 ; exec sh /home/${config.c-opt.user.name}/nixos-config/scripts/random-wallpaper.sh"
             ];
 
@@ -110,9 +109,10 @@
             # See https://wiki.hypr.land/Configuring/Environment-variables/
 
             env = [
-              "NIXOS_OZONE_WL,1"
-              "XCURSOR_SIZE,24"
-              "HYPRCURSOR_SIZE,24"
+              "NIXOS_OZONE_WL,1" # Electron support
+              # "XCURSOR_SIZE,24"
+              # "HYPRCURSOR_SIZE,24"
+              # "HYPRCURSOR_THEME,rose-pine-hyprcursor"
               "LIBVA_DRIVER_NAME,nvidia"
               "__GLX_VENDOR_LIBRARY_NAME,nvidia"
             ];
@@ -338,7 +338,6 @@
             ];
 
             # systemd.enable = true;
-
           };
         };
 

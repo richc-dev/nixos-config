@@ -35,8 +35,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
+    # Stylix for theming
+    # https://github.com/nix-community/stylix
+    stylix = {
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -46,11 +48,11 @@
     nixpkgs,
     nixpkgs-stable,
     nix-vscode-extensions,
-    caelestia-shell,
     home-manager,
     hyprland,
     impermanence,
-    sops-nix
+    sops-nix,
+    stylix
   }@inputs:
   let
     # Modules shared between all systems.
@@ -59,6 +61,7 @@
       home-manager.nixosModules.home-manager
       sops-nix.nixosModules.sops
 
+      ./config
       ./modules
       ./overlays
     ];
@@ -77,11 +80,11 @@
         };
 
         specialArgs = {
-          inherit caelestia-shell;
           inherit hyprland;
           inherit pkgs-stable;
           inherit nix-vscode-extensions;
           inherit sops-nix;
+          inherit stylix;
         };
       in
       nixpkgs.lib.nixosSystem {

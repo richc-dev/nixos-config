@@ -2,8 +2,8 @@
 
 { config, lib, pkgs, ... }:
 {
-  options = {
-    c-opt.user = {
+  options.c-opt = {
+    user = {
       name = lib.mkOption {
         type = lib.types.str;
         default = "rcc";

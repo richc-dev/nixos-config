@@ -1,7 +1,6 @@
 {
   imports = [
     ./boot
-    ./config
     ./desktop
     ./hardware
     ./home-manager
