@@ -46,8 +46,6 @@
 
     home-manager.users.${config.c-opt.user.name} = {
       home.packages = with pkgs; [
-        kdePackages.ark
-        aubio
         gh
         lm_sensors
         nix-output-monitor
