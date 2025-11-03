@@ -1,36 +1,37 @@
 { config, lib, pkgs, ... }:
+let
+  cfg = config.c-opt.graphical.theme;
+in
 {
   options.c-opt.graphical.theme = {
     enable = lib.mkEnableOption "Enable graphical theme config, containing fonts";
   };
 
-  config = lib.mkIf config.c-opt.graphical.theme.enable {
+  config = lib.mkIf cfg.enable {
     environment.systemPackages = [
       pkgs.hyprcursor
-      # pkgs.rose-pine-hyprcursor
-    ];
+      pkgs.base16-schemes
+      cfg.cursor.package
+    ] ++ cfg.icons.packages;
 
-    stylix = {
-      enable = true;
-      # polarity = config.c-opt.theme.colorScheme;
-      # Cursor settings
-      cursor = config.c-opt.theme.cursor;
-      # Fonts
-      fonts = config.c-opt.theme.fonts;
+    environment.variables = {
+      HYPRCURSOR_SIZE = cfg.cursor.size;
+      XCURSOR_SIZE = cfg.cursor.size;
+      HYPRCURSOR_THEME = cfg.cursor.name;
     };
 
     fonts = {
       enableDefaultPackages = true;
       fontDir.enable = true;
-      # fontconfig = {
-      #   enable = true;
-      #   defaultFonts = {
-      #     monospace = [ config.c-opt.font ];
-      #     sansSerif = [ config.c-opt.font ];
-      #     serif = [ config.c-opt.font ];
-      #   };
-      # };
-      packages = config.c-opt.theme.fonts.additionalPkgs;
+      packages = cfg.fonts.packages;
+      fontconfig = {
+        enable = true;
+        defaultFonts = {
+          monospace = [ cfg.fonts.monospace ];
+          sansSerif = [ cfg.fonts.sansSerif ];
+          serif = [ cfg.fonts.serif ];
+        };
+      };
     };
 
     qt = {
@@ -39,21 +40,13 @@
     };
 
     home-manager.users.${config.c-opt.user.name} = {
-      # GTK theme.
       gtk = {
         enable = true;
-        colorScheme = "dark";
+        colorScheme = cfg.colorScheme;
         theme = {
-          name = "Adwaita-dark";
+          name = if cfg.colorScheme == "dark" then "Adwaita-dark" else "Adwaita";
           package = pkgs.gnome-themes-extra;
         };
-      };
-
-      # Qt theme.
-      qt = {
-        enable = true;
-        platformTheme.name = "adwaita-dark";
-        style.name = "adwaita-dark";
       };
     };
 

@@ -34,13 +34,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Stylix for theming
-    # https://github.com/nix-community/stylix
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -52,7 +45,6 @@
     hyprland,
     impermanence,
     sops-nix,
-    stylix
   }@inputs:
   let
     # Modules shared between all systems.
@@ -84,7 +76,6 @@
           inherit pkgs-stable;
           inherit nix-vscode-extensions;
           inherit sops-nix;
-          inherit stylix;
         };
       in
       nixpkgs.lib.nixosSystem {

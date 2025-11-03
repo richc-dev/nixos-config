@@ -1,8 +1,6 @@
 # Hyprland config.
 # See homepage: https://hypr.land/
 # See Hyprland wiki: https://wiki.hypr.land/
-# A good example config is
-# https://github.com/dc-tec/nixos-config/blob/a890ee9bf0e93ec7c1652c23e84f4366076642fb/modules/nixos/desktop/desktop-environment/hyprland.nix
 
 { config, hyprland, lib, pkgs, ... }:
 {
@@ -110,9 +108,6 @@
 
             env = [
               "NIXOS_OZONE_WL,1" # Electron support
-              # "XCURSOR_SIZE,24"
-              # "HYPRCURSOR_SIZE,24"
-              # "HYPRCURSOR_THEME,rose-pine-hyprcursor"
               "LIBVA_DRIVER_NAME,nvidia"
               "__GLX_VENDOR_LIBRARY_NAME,nvidia"
             ];

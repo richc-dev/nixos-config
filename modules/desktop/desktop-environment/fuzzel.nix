@@ -2,23 +2,24 @@
 # https://codeberg.org/dnkl/fuzzel
 
 { config, lib, pkgs, ... }:
+let
+  cfg = config.c-opt.graphical.theme;
+in
 {
   options.c-opt.graphical.fuzzel.enable = lib.mkEnableOption "fuzzel";
 
   config = lib.mkIf config.c-opt.graphical.fuzzel.enable {
 
     home-manager.users.${config.c-opt.user.name} = {
-      home.packages = with pkgs; [ papirus-icon-theme ];
-
       programs.fuzzel = {
         enable = true;
         settings = {
           main = {
             terminal = "${pkgs.kitty}/bin/kitty";
             layer = "overlay";
-            icon-theme = "Papirus-Dark";
+            icon-theme = cfg.icons.name;
             prompt = " ";
-            font = "${config.c-opt.font}";
+            font = "${cfg.fonts.monospace}";
           };
           colors = {
             background = "1b1b1bdd";

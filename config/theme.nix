@@ -1,9 +1,10 @@
 # Define custom theme config.
 { config, lib, pkgs, ... }:
 {
-  options.c-opt.theme = {
+  options.c-opt.graphical.theme = {
+    # See https://nix-community.github.io/stylix/options/platforms/nixos.html#stylixpolarity
     colorScheme = lib.mkOption {
-      type = lib.type.str;
+      type = lib.types.str;
       default = "dark";
       description = "The color scheme for themes. Should be `dark` or `light`.";
     };
@@ -17,82 +18,93 @@
 
       name = lib.mkOption {
         type = lib.types.str;
-        default = "BreezeX-RosePine-Linux";
+        default = "rose-pine-hyprcursor";#"BreezeX-RosePine-Linux";
         description = "Name of the cursor theme.";
       };
 
       size = lib.mkOption {
-        type = lib.types.int;
+        type = lib.types.ints.unsigned;
         default = 24;
         description = "Cursor size.";
-      }
+      };
     };
 
     fonts = {
-      additionalPkgs = lib.mkOption {
+      packages = lib.mkOption {
         type = lib.types.listOf lib.types.package;
         default = [
-          pkgs.material-symbols
+          pkgs.nerd-fonts.dejavu-sans-mono
           pkgs.rubik
+          pkgs.noto-fonts-color-emoji
         ];
-        description = "Additional font packages to install.";
+        description = "Font packages to install.";
       };
 
-      serif = {
-        name = lib.mkOption {
-          type = lib.types.str;
-          default = "Dejavu Mono";
-          description = "Default serif font.";
-        };
+      sizes = {
 
-        package = lib.mkOption {
-          type = lib.types.package;
-          default = pkgs.dejavu-sans-mono;
-          description = "Default serif font package.";
-        };
       };
 
-      sansSerif = {
-        name = lib.mkOption {
-          type = lib.types.str;
-          default = "Dajavu Mono";
-          description = "Default sans-serif font.";
-        };
-
-        package = lib.mkOption {
-          type = lib.types.package;
-          default = pkgs.dejavu-sans-mono;
-          description = "Default sans-serif font package.";
-        };
+      serif = lib.mkOption {
+        type = lib.types.str;
+        default = "DejaVu Mono";
+        description = "Default serif font.";
       };
 
-      monospace = {
-        name = lib.mkOption {
-          type = lib.types.str;
-          default = "Dejavu Mono";
-          description = "Default monospace font.";
-        };
-
-        package = lib.mkOption {
-          type = lib.types.package;
-          default = pkgs.dejavu-sans-mono;
-          description = "Default monospace font package.";
-        };
+      sansSerif = lib.mkOption {
+        type = lib.types.str;
+        default = "DajaVu Mono";
+        description = "Default sans-serif font.";
       };
 
-      emoji = {
-        name = lib.mkOption {
-          type = lib.types.str;
-          default = "Noto Color Emoji";
-          description = "Default emoji font.";
-        };
-
-        package = lib.mkOption {
-          type = lib.types.package;
-          default = pkgs.noto-fonts-color-emoji;
-          description = "Default emoji font package.";
-        };
+      monospace = lib.mkOption {
+        type = lib.types.str;
+        default = "DejaVu Mono";
+        description = "Default monospace font.";
       };
+
+      emoji = lib.mkOption {
+        type = lib.types.str;
+        default = "DejaVu Mono";
+        description = "Default emoji font.";
+      };
+    };
+
+    icons = {
+      packages = lib.mkOption {
+        type = lib.types.listOf lib.types.package;
+        default = [
+          pkgs.papirus-icon-theme
+          pkgs.material-symbols
+        ];
+        description = "Icon packages to install.";
+      };
+
+      name = lib.mkOption {
+        type = lib.types.str;
+        default = "Papirus Dark";
+        description = "Icons to use.";
+      };
+
+      dark = lib.mkOption {
+        type = lib.types.str;
+        default = "Papirus Dark";
+        description = "Icons to use for dark themes.";
+      };
+
+      light = lib.mkOption {
+        type = lib.types.str;
+        default = "Papirus Light";
+        description = "Icons to use for light themes.";
+      };
+    };
+
+  };
+
+  config = {
+    c-opt.graphical.theme = {
+      icons.name = if config.c-opt.graphical.theme.colorScheme == "dark"
+        then config.c-opt.graphical.theme.icons.dark
+        else config.c-opt.graphical.theme.icons.light;
     };
   };
 }

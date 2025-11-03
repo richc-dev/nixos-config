@@ -4,6 +4,8 @@
     useGlobalPkgs = true;
     useUserPackages = true;
 
+    backupFileExtension = "hm-backup";
+
     users.${config.c-opt.user.name} = {
         # Common config.
         home = {

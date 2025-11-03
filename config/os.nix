@@ -20,5 +20,11 @@
       default = false;
       description = "Whether the device is a laptop. Enables power saving features.";
     };
+
+    font = lib.mkOption {
+      type = lib.types.str;
+      default = "DejaVu Mono";
+      description = "The system font.";
+    };
   };
 }

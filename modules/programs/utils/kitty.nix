@@ -2,6 +2,9 @@
 # https://github.com/kovidgoyal/kitty
 
 { config, lib, ... }:
+let
+  graphical-cfg = config.c-opt.graphical.theme;
+in
 {
   options.c-opt.programs.utils.terminal.enable = lib.mkEnableOption "Enable Kitty";
 
@@ -10,7 +13,7 @@
       programs.kitty = {
         enable = true;
         font = {
-          name = config.c-opt.font;
+          name = graphical-cfg.fonts.monospace;
           size = 10;
         };
         settings = {

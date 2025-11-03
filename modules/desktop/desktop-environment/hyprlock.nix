@@ -13,7 +13,7 @@
       programs.hyprlock = {
         enable = true;
         settings = {
-          "$font" = "${config.c-opt.font}";
+          "$font" = "${config.c-opt.graphical.theme.fonts.monospace}";
 
           animations = {
             enabled = true;
