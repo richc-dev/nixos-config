@@ -87,7 +87,7 @@
             "$fileManager" = "dolphin";
             "$menu" = "wofi --show drun";
             "$mod" = "SUPER";
-            "$terminal" = "kitty";
+            "$terminal" = "ghostty";
 
             xwayland.force_zero_scaling = true;
 
