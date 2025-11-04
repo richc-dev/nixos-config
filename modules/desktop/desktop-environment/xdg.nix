@@ -1,8 +1,13 @@
 { config, lib, pkgs, ... }:
 {
-  options.c-opt.graphical.xdg.enable = lib.mkEnableOption "xdg";
+  options.c-opt.de.xdg.enable = lib.mkEnableOption "Enable xdg";
 
-  config = {
+  config = lib.mkIf config.c-opt.de.xdg.enable {
+    environment.systemPackages = [
+      xdg-user-dirs
+      xdg-utils
+      libsForQt5.kservice
+    ];
 
     xdg.portal = {
       enable = true;
@@ -12,47 +17,37 @@
       ];
     };
 
-    home-manager.users.${config.c-opt.user.name} =
-      { pkgs, ... }:
-      {
-        home.packages = with pkgs; [
-          xdg-user-dirs
-          xdg-utils
-          libsForQt5.kservice
-        ];
-
-        xdg = {
-          enable = true;
-          autostart.enable = true;
-          mimeApps = {
-            enable = true;
-            defaultApplications = {
-              "image/png" = "nomacs.desktop";
-              "image/jpeg" = "nomacs.desktop";
-              "image/svg+xml" = "inkscape.desktop";
-              "text/plain" = "emacs.desktop";
-              "text/html" = "librewolf.desktop";
-              "video/mp4" = "mpv.desktop";
-              "video/mkv" = "mpv.desktop";
-              "x-scheme-handler/http" = "librewolf.desktop";
-              "x-scheme-handler/https" = "librewolf.desktop";
-              "x-scheme-handler/about" = "librewolf.desktop";
-              "x-scheme-handler/unknown" = "librewolf.desktop";
-            };
-          };
-          userDirs = {
-            enable = true;
-            desktop = "$HOME/Desktop";
-            documents = "$HOME/Documents";
-            download = "$HOME/Downloads";
-            music = "$HOME/Music";
-            pictures = "$HOME/Pictures";
-            publicShare = "$HOME/Public";
-            templates = "$HOME/Templates";
-            videos = "$HOME/Videos";
-          };
+    home-manager.users.${config.c-opt.user.name}.xdg = {
+      enable = true;
+      autostart.enable = true;
+      mimeApps = {
+        enable = true;
+        defaultApplications = {
+          "image/png" = "nomacs.desktop";
+          "image/jpeg" = "nomacs.desktop";
+          "image/svg+xml" = "inkscape.desktop";
+          "text/plain" = "emacs.desktop";
+          "text/html" = "librewolf.desktop";
+          "video/mp4" = "mpv.desktop";
+          "video/mkv" = "mpv.desktop";
+          "x-scheme-handler/http" = "librewolf.desktop";
+          "x-scheme-handler/https" = "librewolf.desktop";
+          "x-scheme-handler/about" = "librewolf.desktop";
+          "x-scheme-handler/unknown" = "librewolf.desktop";
         };
       };
+      userDirs = {
+        enable = true;
+        desktop = "$HOME/Desktop";
+        documents = "$HOME/Documents";
+        download = "$HOME/Downloads";
+        music = "$HOME/Music";
+        pictures = "$HOME/Pictures";
+        publicShare = "$HOME/Public";
+        templates = "$HOME/Templates";
+        videos = "$HOME/Videos";
+      };
+    };
 
   };
 }

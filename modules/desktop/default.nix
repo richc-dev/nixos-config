@@ -2,8 +2,8 @@
 {
   imports = [
     ./desktop-environment
-    ./sound
-    ./theme
+    ./sound.nix
+    ./theme.nix
   ];
 
   c-opt = {

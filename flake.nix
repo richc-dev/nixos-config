@@ -11,10 +11,6 @@
     # https://github.com/nix-community/nix-vscode-extensions
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
-    # https://github.com/nix-community/impermanence
-    impermanence.url = "github:nix-community/impermanence";
-
-    # Home Manager
     # Home Manager doesn't generate the configs when using `nixos-rebuid boot`
     # command. And yes, I am an IDIOT and spent hours trying to figure out
     # why Home Manager wasn't applying configs.
@@ -43,19 +39,16 @@
     nix-vscode-extensions,
     home-manager,
     hyprland,
-    impermanence,
     sops-nix,
   }@inputs:
   let
     # Modules shared between all systems.
     sharedModules = [
-      impermanence.nixosModule
       home-manager.nixosModules.home-manager
       sops-nix.nixosModules.sops
 
       ./config
       ./modules
-      ./overlays
     ];
   in
   {

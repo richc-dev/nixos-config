@@ -10,6 +10,7 @@
         kdePackages.ark
         kdePackages.dolphin
         kdePackages.dolphin-plugins
+        ghostty
         overskride # Bluetooth manager
       ];
 

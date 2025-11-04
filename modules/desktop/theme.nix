@@ -4,7 +4,7 @@ let
 in
 {
   options.c-opt.graphical.theme = {
-    enable = lib.mkEnableOption "Enable graphical theme config, containing fonts";
+    enable = lib.mkEnableOption "Enable theme config";
   };
 
   config = lib.mkIf cfg.enable {

@@ -3,9 +3,9 @@
     ./boot
     ./desktop
     ./hardware
-    ./home-manager
     ./programs
 
+    ./home-manager.nix
     ./system.nix
   ];
 }

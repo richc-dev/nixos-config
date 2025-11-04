@@ -3,6 +3,7 @@
 
 {
   imports = [
+    ./desktop-env.nix
     ./impermanence.nix
     ./os.nix
     ./theme.nix
