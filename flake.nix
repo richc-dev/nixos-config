@@ -24,6 +24,20 @@
     # https://hypr.land
     hyprland.url = "github:hyprwm/Hyprland";
 
+    # Noctalia shell
+    # https://github.com/noctalia-dev/noctalia-shell
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.quickshell.follows = "quickshell";
+    };
+
+    # Quickshell (required for Noctalia)
+    quickshell = {
+      url = "github:outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Sops-nix
     # https://github.com/Mic92/sops-nix
     sops-nix = {
@@ -46,6 +60,8 @@
     nix-vscode-extensions,
     home-manager,
     hyprland,
+    noctalia,
+    quickshell,
     sops-nix,
     stylix
   }@inputs:
@@ -73,10 +89,12 @@
           config.allowUnfree = true;
         };
 
+        # Args passed to NixOS modules
         specialArgs = {
           inherit hyprland;
           inherit pkgs-stable;
           inherit nix-vscode-extensions;
+          inherit noctalia;
           inherit sops-nix;
         };
       in

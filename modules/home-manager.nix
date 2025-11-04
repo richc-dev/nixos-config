@@ -1,6 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, noctalia, ... }:
 {
   home-manager = {
+    extraSpecialArgs = {
+      noctalia
+    };
+
     useGlobalPkgs = true;
     useUserPackages = true;
 

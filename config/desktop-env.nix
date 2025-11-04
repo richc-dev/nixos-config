@@ -2,7 +2,7 @@
 { config, lib, ... }:
 {
   options.c-opt.de = {
-
+    noctalia.enable = lib.mkEnableOption "Enable Noctalia desktop shell";
   };
 
   config.c-opt = {
@@ -16,6 +16,7 @@
 
     de = {
       niri.enable = lib.mkDefault false;
+      noctalia.enable = lib.mkDefault true;
       xdg.enable = lib.mkDefault true;
     };
   };

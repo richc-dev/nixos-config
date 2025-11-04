@@ -7,6 +7,7 @@
     ./hyprlock.nix
     ./hyprpaper.nix
     ./niri.nix
+    ./noctalia.nix
     ./quickshell.nix
     ./xdg.nix
   ];
