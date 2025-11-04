@@ -3,7 +3,7 @@
 
 { config, lib, pkgs, ... }:
 let
-  cfg = config.c-opt.graphical.theme;
+  cfg = config.c-opt.theme;
 in
 {
   options.c-opt.graphical.fuzzel.enable = lib.mkEnableOption "fuzzel";
@@ -19,7 +19,7 @@ in
             layer = "overlay";
             icon-theme = cfg.icons.name;
             prompt = " ";
-            font = "${cfg.fonts.monospace}";
+            font = "${cfg.fonts.monospace.name}";
           };
           colors = {
             background = "1b1b1bdd";

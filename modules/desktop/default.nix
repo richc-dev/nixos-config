@@ -8,6 +8,6 @@
 
   c-opt = {
     sound.enable = true;
-    graphical.theme.enable = true;
+    theme.enable = true;
   };
 }

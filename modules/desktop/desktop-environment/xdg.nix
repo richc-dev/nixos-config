@@ -3,7 +3,7 @@
   options.c-opt.de.xdg.enable = lib.mkEnableOption "Enable xdg";
 
   config = lib.mkIf config.c-opt.de.xdg.enable {
-    environment.systemPackages = [
+    environment.systemPackages = with pkgs; [
       xdg-user-dirs
       xdg-utils
       libsForQt5.kservice
@@ -12,8 +12,8 @@
     xdg.portal = {
       enable = true;
       wlr.enable = true;
-      extraPortals = [
-        pkgs.xdg-desktop-portal-gtk
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
       ];
     };
 

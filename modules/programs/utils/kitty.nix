@@ -3,22 +3,20 @@
 
 { config, lib, ... }:
 let
-  graphical-cfg = config.c-opt.graphical.theme;
+  graphical-cfg = config.c-opt;
 in
 {
-  options.c-opt.programs.utils.terminal.enable = lib.mkEnableOption "Enable Kitty";
-
-  config = lib.mkIf config.c-opt.programs.utils.terminal.enable {
-    home-manager.users.${config.c-opt.user.name} = {
+  config = lib.mkIf cfg.programs.utils.terminal.enable {
+    home-manager.users.${cfg.user.name} = {
       programs.kitty = {
         enable = true;
         font = {
-          name = graphical-cfg.fonts.monospace;
+          name = graphical-cfg.theme.fonts.monospace.name;
           size = 10;
         };
         settings = {
           confirm_os_window_close = 0;
-          shell = if config.c-opt.programs.utils.terminal.fish.enable then "fish" else ".";
+          shell = if cfg.programs.utils.terminal.fish.enable then "fish" else ".";
         };
       };
     };

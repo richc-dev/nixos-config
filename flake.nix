@@ -30,6 +30,13 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Stylix
+    # https://github.com/nix-community/stylix
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -40,12 +47,14 @@
     home-manager,
     hyprland,
     sops-nix,
+    stylix
   }@inputs:
   let
     # Modules shared between all systems.
     sharedModules = [
       home-manager.nixosModules.home-manager
       sops-nix.nixosModules.sops
+      stylix.nixosModules.stylix
 
       ./config
       ./modules

@@ -1,11 +1,9 @@
 { config, lib, pkgs, ... }:
 let
-  cfg = config.c-opt.graphical.theme;
+  cfg = config.c-opt.theme;
 in
 {
-  options.c-opt.graphical.theme = {
-    enable = lib.mkEnableOption "Enable theme config";
-  };
+  options.c-opt.theme.enable = lib.mkEnableOption "Enable theme config";
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [
@@ -14,11 +12,20 @@ in
       cfg.cursor.package
     ] ++ cfg.icons.packages;
 
-    environment.variables = {
-      HYPRCURSOR_SIZE = cfg.cursor.size;
-      XCURSOR_SIZE = cfg.cursor.size;
-      HYPRCURSOR_THEME = cfg.cursor.name;
+    stylix = {
+      enable = true;
+      autoEnable = false;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/black-metal.yaml";
+      polarity = cfg.colorScheme;
+
+      cursor = cfg.cursor;
     };
+
+    # environment.variables = {
+    #   HYPRCURSOR_SIZE = cfg.cursor.size;
+    #   XCURSOR_SIZE = cfg.cursor.size;
+    #   HYPRCURSOR_THEME = cfg.cursor.name;
+    # };
 
     fonts = {
       enableDefaultPackages = true;
@@ -27,9 +34,9 @@ in
       fontconfig = {
         enable = true;
         defaultFonts = {
-          monospace = [ cfg.fonts.monospace ];
-          sansSerif = [ cfg.fonts.sansSerif ];
-          serif = [ cfg.fonts.serif ];
+          monospace = [ cfg.fonts.monospace.name ];
+          sansSerif = [ cfg.fonts.sansSerif.name ];
+          serif = [ cfg.fonts.serif.name ];
         };
       };
     };
