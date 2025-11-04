@@ -3,7 +3,7 @@
 
 { config, lib, ... }:
 let
-  graphical-cfg = config.c-opt;
+  cfg = config.c-opt;
 in
 {
   config = lib.mkIf cfg.programs.utils.terminal.enable {
@@ -11,7 +11,7 @@ in
       programs.kitty = {
         enable = true;
         font = {
-          name = graphical-cfg.theme.fonts.monospace.name;
+          name = cfg.theme.fonts.monospace.name;
           size = 10;
         };
         settings = {

@@ -15,7 +15,7 @@ in
     stylix = {
       enable = true;
       autoEnable = false;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/black-metal.yaml";
+      base16Scheme = cfg.themeFile;
       polarity = cfg.colorScheme;
 
       cursor = cfg.cursor;

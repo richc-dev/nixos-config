@@ -3,12 +3,15 @@
 
 { config, lib, ... }:
 let
-  graphical-cfg = config.c-opt;
+  cfg = config.c-opt;
 in
 {
   config = lib.mkIf cfg.programs.utils.terminal.enable {
     home-manager.users.${cfg.user.name} = {
-      programs.ghostty.enable = true;
+      programs.ghostty = {
+        enable = true;
+        enableFishIntegration = cfg.programs.utils.terminal.fish.enable;
+      };
       stylix.targets.ghostty.enable = lib.mkDefault true;
     };
   };

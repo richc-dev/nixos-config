@@ -40,6 +40,7 @@
       gtop
 
       # Other
+      bat
       git
       ripgrep
     ];

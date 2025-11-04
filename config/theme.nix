@@ -9,6 +9,12 @@
       description = "The color scheme for themes Should be `dark` or `light`";
     };
 
+    themeFile = lib.mkOption {
+      type = lib.types.path;
+      default = ./configs/wryan.yaml;
+      description = "Theme yaml file";
+    };
+
     cursor = {
       package = lib.mkOption {
         type = lib.types.package;
