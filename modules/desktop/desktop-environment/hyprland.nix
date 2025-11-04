@@ -98,7 +98,8 @@
             exec-once = [
               "$terminal"
               "hypridle"
-              "sleep 1 ; exec sh /home/${config.c-opt.user.name}/nixos-config/scripts/random-wallpaper.sh"
+              "noctalia-shell"
+              #"sleep 1 ; exec sh /home/${config.c-opt.user.name}/nixos-config/scripts/random-wallpaper.sh"
             ];
 
             # ######################

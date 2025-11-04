@@ -10,10 +10,13 @@ in
     home-manager.users.${cfg.user.name} = {
       programs.ghostty = {
         enable = true;
-        enableFishIntegration = cfg.programs.utils.terminal.fish.enable;
+        enableFishIntegration = if cfg.programs.utils.terminal.fish.enable then true else false;
         settings = {
-          theme = "Wryan";
+          command = "fish";
+          confirm-close-surface = false;
           font-size = 10;
+          shell-integration = "fish";
+          theme = "Wryan";
         };
       };
     };

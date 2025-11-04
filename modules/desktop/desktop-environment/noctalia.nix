@@ -1,6 +1,6 @@
 # Noctalia config
 # https://github.com/noctalia-dev/noctalia-shell
-{ config, lib, noctalia, pkgs, ... }:
+{ config, lib, noctalia, pkgs, system, ... }:
 let
   cfg = config.c-opt;
 in

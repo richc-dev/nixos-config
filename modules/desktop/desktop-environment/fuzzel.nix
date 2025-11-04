@@ -19,7 +19,7 @@ in
             layer = "overlay";
             icon-theme = cfg.icons.name;
             prompt = " ";
-            font = "${cfg.fonts.monospace.name}";
+            font = "${cfg.fonts.serif.name}";
           };
           colors = {
             background = "1b1b1bdd";

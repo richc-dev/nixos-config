@@ -96,6 +96,7 @@
           inherit nix-vscode-extensions;
           inherit noctalia;
           inherit sops-nix;
+          inherit system;
         };
       in
       nixpkgs.lib.nixosSystem {

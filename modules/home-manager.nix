@@ -2,7 +2,7 @@
 {
   home-manager = {
     extraSpecialArgs = {
-      noctalia
+      inherit noctalia;
     };
 
     useGlobalPkgs = true;

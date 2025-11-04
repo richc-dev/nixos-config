@@ -54,13 +54,13 @@
       serif = {
         name = lib.mkOption {
           type = lib.types.str;
-          default = "DejaVu Mono";
+          default = "Rubik";
           description = "Default serif font";
         };
 
         package = lib.mkOption {
           type = lib.types.package;
-          default = pkgs.nerd-fonts.dejavu-sans-mono;
+          default = pkgs.rubik;
           description = "Default serif font package";
         };
       };
@@ -68,13 +68,13 @@
       sansSerif = {
         name = lib.mkOption {
           type = lib.types.str;
-          default = "DejaVu Mono";
+          default = "Rubik";
           description = "Default sans-serif font";
         };
 
         package = lib.mkOption {
           type = lib.types.package;
-          default = pkgs.nerd-fonts.dejavu-sans-mono;
+          default = pkgs.rubik;
           description = "Default sans-serif font package";
         };
       };
