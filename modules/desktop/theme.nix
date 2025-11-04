@@ -15,7 +15,7 @@ in
     stylix = {
       enable = true;
       autoEnable = false;
-      base16Scheme = cfg.themeFile;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/twilight.yaml";
       polarity = cfg.colorScheme;
 
       cursor = cfg.cursor;

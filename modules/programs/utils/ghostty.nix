@@ -11,8 +11,11 @@ in
       programs.ghostty = {
         enable = true;
         enableFishIntegration = cfg.programs.utils.terminal.fish.enable;
+        settings = {
+          theme = "Wryan";
+          font-size = 10;
+        };
       };
-      stylix.targets.ghostty.enable = lib.mkDefault true;
     };
   };
 }
