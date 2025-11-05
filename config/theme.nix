@@ -42,7 +42,7 @@
           pkgs.nerd-fonts.dejavu-sans-mono
           pkgs.rubik
           pkgs.noto-fonts-color-emoji
-          pkgs.maple-mono.truetype
+          pkgs.maple-mono.NF
         ];
         description = "Font packages to install";
       };
@@ -82,13 +82,13 @@
       monospace = {
         name = lib.mkOption {
           type = lib.types.str;
-          default = "MapleMono";
+          default = "Maple Mono NF";
           description = "Default monospace font";
         };
 
         package = lib.mkOption {
           type = lib.types.package;
-          default = pkgs.maple-mono.truetype;
+          default = pkgs.maple-mono.NF;
           description = "Default monospace font package";
         };
       };
