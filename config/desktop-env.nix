@@ -17,6 +17,7 @@
     de = {
       niri.enable = lib.mkDefault false;
       noctalia.enable = lib.mkDefault true;
+      sddm.enable = lib.mkDefault true;
       xdg.enable = lib.mkDefault true;
     };
   };

@@ -62,6 +62,8 @@
     printing.enable = lib.mkDefault true;
   };
 
+  xserver.exportConfiguration = true;
+
   # Set up the user.
   users = {
     mutableUsers = false;

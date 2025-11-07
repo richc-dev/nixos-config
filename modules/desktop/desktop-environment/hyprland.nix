@@ -21,25 +21,6 @@
       trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
     };
 
-    services = {
-      xserver = {
-        exportConfiguration = true;
-        # Load Nvidia driver.
-        videoDrivers = [ "nvidia" "amdgpu" ];
-      };
-
-      # Load sddm.
-      displayManager.sddm = {
-          enable = true;
-          package = pkgs.kdePackages.sddm;
-          wayland.enable = true;
-          extraPackages = with pkgs.kdePackages; [
-            qtsvg
-            qtvirtualkeyboard
-          ];
-      };
-    };
-
     # Enable NixOS Hyprland module.
     programs.hyprland = {
       enable = true;

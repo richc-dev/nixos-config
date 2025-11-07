@@ -25,5 +25,8 @@
         open = true;
       };
     };
+
+    # Load Nvidia driver
+    services.xserver.videoDrivers = [ "nivdia" "amdgpu" ];
   };
 }
