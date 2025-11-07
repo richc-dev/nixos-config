@@ -8,6 +8,7 @@
     ./hyprpaper.nix
     ./niri.nix
     ./noctalia.nix
+    ./sddm.nix
     ./quickshell.nix
     ./xdg.nix
   ];

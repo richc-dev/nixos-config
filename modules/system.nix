@@ -58,11 +58,11 @@
   nixpkgs.config.allowUnfree = true;
 
   services = {
+    xserver.exportConfiguration = true;
+
     # Enable CUPS to print documents.
     printing.enable = lib.mkDefault true;
   };
-
-  xserver.exportConfiguration = true;
 
   # Set up the user.
   users = {

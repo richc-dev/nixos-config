@@ -27,6 +27,6 @@
     };
 
     # Load Nvidia driver
-    services.xserver.videoDrivers = [ "nivdia" "amdgpu" ];
+    services.xserver.videoDrivers = [ "nvidia" "amdgpu" ];
   };
 }

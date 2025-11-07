@@ -3,6 +3,7 @@
 {
   options.c-opt.de = {
     noctalia.enable = lib.mkEnableOption "Enable Noctalia desktop shell";
+    sddm.enable = lib.mkEnableOption "Enable SDDM Display Manager";
   };
 
   config.c-opt = {
