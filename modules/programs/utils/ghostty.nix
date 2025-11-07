@@ -16,7 +16,7 @@ in
           confirm-close-surface = false;
           font-size = 10;
           shell-integration = "fish";
-          theme = "Wryan";
+          theme = "GitHub Dark Default";
         };
       };
     };
