@@ -18,14 +18,15 @@ in
       base16Scheme = "${pkgs.base16-schemes}/share/themes/twilight.yaml";
       polarity = cfg.colorScheme;
 
-      cursor = cfg.cursor;
+      #cursor = cfg.cursor;
     };
 
-    # environment.variables = {
-    #   HYPRCURSOR_SIZE = cfg.cursor.size;
-    #   XCURSOR_SIZE = cfg.cursor.size;
-    #   HYPRCURSOR_THEME = cfg.cursor.name;
-    # };
+    environment.variables = {
+      HYPRCURSOR_SIZE = cfg.cursor.size;
+      XCURSOR_SIZE = cfg.cursor.size;
+      HYPRCURSOR_THEME = cfg.cursor.name;
+      XCURSOR_THEME = cfg.cursor.name;
+    };
 
     fonts = {
       enableDefaultPackages = true;
@@ -46,7 +47,13 @@ in
       style = "adwaita-dark";
     };
 
-    home-manager.users.${config.c-opt.user.name} = {
+    home-manager.users.${config.c-opt.user.name} =
+    { pkgs, ... }:
+    {
+      # systemd.user.tmpfiles.rules = [
+      #   "L /home/${config.c-opt.user.name}/.local/share/icons/ - - - - /"
+      # ];
+
       gtk = {
         enable = true;
         colorScheme = cfg.colorScheme;

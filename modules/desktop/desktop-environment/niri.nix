@@ -14,6 +14,6 @@
 
     xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-gnome ];
 
-    #home-manager.users.${config.c-opt.user.name}.xdg.configFile."niri/config.kdl".source = ./configs/niri/config.kdl;
+    home-manager.users.${config.c-opt.user.name}.xdg.configFile."niri/config.kdl".source = ./configs/niri/config.kdl;
   };
 }
