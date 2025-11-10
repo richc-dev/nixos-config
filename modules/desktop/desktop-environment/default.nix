@@ -6,7 +6,6 @@
     ./hyprland.nix
     ./hyprlock.nix
     ./hyprpaper.nix
-    ./keyboard.nix
     ./niri.nix
     ./noctalia.nix
     ./sddm.nix

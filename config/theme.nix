@@ -16,22 +16,44 @@
     };
 
     cursor = {
-      package = lib.mkOption {
-        type = lib.types.package;
-        default = pkgs.rose-pine-hyprcursor;
-        description = "Cursor package";
+      hypr = {
+        package = lib.mkOption {
+          type = lib.types.package;
+          default = pkgs.rose-pine-hyprcursor;
+          description = "Cursor package";
+        };
+
+        name = lib.mkOption {
+          type = lib.types.str;
+          default = "rose-pine-hyprcursor";
+          description = "Name of the cursor theme";
+        };
+
+        size = lib.mkOption {
+          type = lib.types.ints.unsigned;
+          default = 24;
+          description = "Cursor size";
+        };
       };
 
-      name = lib.mkOption {
-        type = lib.types.str;
-        default = "BreezeX-RosePine-Linux";#"rose-pine-hyprcursor";
-        description = "Name of the cursor theme";
-      };
+      x = {
+        package = lib.mkOption {
+          type = lib.types.package;
+          default = pkgs.rose-pine-cursor;
+          description = "Cursor package";
+        };
 
-      size = lib.mkOption {
-        type = lib.types.ints.unsigned;
-        default = 24;
-        description = "Cursor size";
+        name = lib.mkOption {
+          type = lib.types.str;
+          default = "BreezeX-RosePine-Linux";
+          description = "Name of the cursor theme";
+        };
+
+        size = lib.mkOption {
+          type = lib.types.ints.unsigned;
+          default = 24;
+          description = "Cursor size";
+        };
       };
     };
 

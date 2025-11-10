@@ -9,7 +9,8 @@ in
     environment.systemPackages = [
       pkgs.hyprcursor
       pkgs.base16-schemes
-      cfg.cursor.package
+      cfg.cursor.hypr.package
+      cfg.cursor.x.package
     ] ++ cfg.icons.packages;
 
     stylix = {
@@ -22,10 +23,10 @@ in
     };
 
     environment.variables = {
-      HYPRCURSOR_SIZE = cfg.cursor.size;
-      XCURSOR_SIZE = cfg.cursor.size;
-      HYPRCURSOR_THEME = cfg.cursor.name;
-      XCURSOR_THEME = cfg.cursor.name;
+      HYPRCURSOR_SIZE = cfg.cursor.hypr.size;
+      XCURSOR_SIZE = cfg.cursor.x.size;
+      HYPRCURSOR_THEME = cfg.cursor.hypr.name;
+      XCURSOR_THEME = cfg.cursor.x.name;
     };
 
     fonts = {
@@ -50,9 +51,10 @@ in
     home-manager.users.${config.c-opt.user.name} =
     { pkgs, ... }:
     {
-      # systemd.user.tmpfiles.rules = [
-      #   "L /home/${config.c-opt.user.name}/.local/share/icons/ - - - - /"
-      # ];
+      systemd.user.tmpfiles.rules = [
+        "L /home/${config.c-opt.user.name}/.local/share/icons/${cfg.cursor.hypr.name} - - - - ${cfg.cursor.hypr.package}/share/icons/${cfg.cursor.hypr.name}"
+        "L /home/${config.c-opt.user.name}/.local/share/icons/${cfg.cursor.x.name} - - - - ${cfg.cursor.x.package}/share/icons/${cfg.cursor.x.name}"
+      ];
 
       gtk = {
         enable = true;
