@@ -139,7 +139,6 @@ layout {
 
     // You can enable drop shadows for windows.
     shadow {
-        // Uncomment the next line to enable shadows.
         on
 
         // By default, the shadow draws only around its window, and not behind it.
@@ -180,10 +179,10 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        left 20
-        right 20
-        // top 64
-        // bottom 64
+        left 10
+        right 10
+        top 5
+        bottom 5
     }
 }
 
@@ -506,7 +505,8 @@ binds {
 
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+
+Alt+Print { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
@@ -524,4 +524,10 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+}
+
+gestures {
+    hot-corners {
+    	off
+    }
 }
