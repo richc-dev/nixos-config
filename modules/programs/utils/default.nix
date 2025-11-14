@@ -37,7 +37,9 @@
 
       # System monitoring
       atop
+      duf
       gtop
+      nvtopPackages.full
 
       # Other
       bat
