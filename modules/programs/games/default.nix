@@ -1,10 +1,6 @@
 { config, lib, pkgs, ... }:
 {
   config = lib.mkIf config.c-opt.programs.gaming.enable {
-    imports = [
-      ./steam.nix
-    ];
-
     programs.gamemode.enable = true;
 
     # Enable Steam
@@ -25,6 +21,8 @@
       home.packages = with pkgs; [
         heroic
         mangohud
+        prismlauncher
+        vintagestory
       ];
     };
   };

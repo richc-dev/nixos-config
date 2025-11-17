@@ -4,8 +4,10 @@
 {
   imports = [
     ./desktop-env.nix
+    ./hardware.nix
     ./impermanence.nix
     ./os.nix
+    ./programs.nix
     ./theme.nix
     ./user.nix
   ];
