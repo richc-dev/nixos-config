@@ -65,6 +65,7 @@
           pkgs.rubik
           pkgs.noto-fonts-color-emoji
           pkgs.maple-mono.Normal-NF
+	  pkgs.nerd-fonts.symbols-only
         ];
         description = "Font packages to install";
       };

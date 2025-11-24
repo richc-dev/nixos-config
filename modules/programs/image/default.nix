@@ -9,6 +9,7 @@
     home-manager.users.${config.c-opt.user.name}.home = {
       packages = with pkgs; [
         aseprite
+	gimp
         inkscape-with-extensions
         nomacs
         krita
