@@ -3,7 +3,7 @@
 { config, lib, pkgs, ... }:
 {
   imports = [
-    ./mopidy.nix
+    ./mpd.nix
   ];
 
   config = lib.mkIf config.c-opt.programs.audio.enable {
