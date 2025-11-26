@@ -2,16 +2,22 @@
 
 { config, lib, pkgs, ... }:
 {
-  options.c-opt.programs.audio.enable = lib.mkEnableOption "Install audio editing/recording/playback programs";
+  imports = [
+    ./mopidy.nix
+  ];
 
   config = lib.mkIf config.c-opt.programs.audio.enable {
 
-    home-manager.users.${config.c-opt.user.name}.home = {
-      packages = with pkgs; [
+    home-manager.users.${config.c-opt.user.name} = {
+      home.packages = with pkgs; [
         audacity
         dopamine
         spotify
       ];
+
+      programs.rmpc = {
+        enable = true;
+      };
     };
 
   };

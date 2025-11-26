@@ -14,7 +14,6 @@
   ];
 
   c-opt.programs = {
-    audio.enable = lib.mkDefault true;
     browsers = {
       enable = lib.mkDefault true;
       librewolf.enable = lib.mkDefault true;
