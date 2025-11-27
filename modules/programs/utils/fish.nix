@@ -6,10 +6,12 @@ in
   options.c-opt.programs.utils.terminal.fish.enable = lib.mkEnableOption "Enable fish";
 
   config = lib.mkIf cfg.programs.utils.terminal.fish.enable {
-    home-manager.users.${cfg.user.name} = {
-      programs.fish = {
-        enable = true;
-      };
+    programs.fish = {
+      enable = true;
+      shellInit = ''
+        set fish_greeting # Disable greeting
+        starship init fish | source
+      '';
     };
   };
 }

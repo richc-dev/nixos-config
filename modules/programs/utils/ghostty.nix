@@ -16,6 +16,7 @@ in
           confirm-close-surface = false;
           font-size = 10;
           shell-integration = "fish";
+	  window-save-state = "never";
           theme = "GitHub Dark Default";
         };
       };
