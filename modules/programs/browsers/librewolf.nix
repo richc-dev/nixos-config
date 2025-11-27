@@ -49,6 +49,13 @@
                   IconURL = "https://search.nixos.org/favicon.png";
                   Alias = "@no";
                 }
+		# MyNixOS is useful for finding Home Manager options.
+		{
+		  Name = "MyNixOS";
+		  URLTemplate = "https://mynixos.com/search?q={searchTerms}";
+		  IconURL = "https://mynixos.com/favicon.ico";
+		  Alias = "@mn";
+		}
               ];
             };
             Preferences = {
