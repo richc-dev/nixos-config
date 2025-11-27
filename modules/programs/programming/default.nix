@@ -17,6 +17,7 @@
         devenv
         emacs
         godot_4
+	libgcc
         netbeans
         php
         php84Packages.composer
