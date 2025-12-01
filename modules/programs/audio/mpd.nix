@@ -3,7 +3,7 @@
   config = lib.mkIf config.c-opt.programs.audio.mpd.enable {
     services.mpd = {
       enable = true;
-      musicDirectory = lib.mkDefault "$HOME/Music/mpd";
+      musicDirectory = lib.mkDefault "${config.c-opt.user.homeDirectory}/Music/mpd";
       user = "${config.c-opt.user.name}";
       extraConfig = ''
         audio_output {
