@@ -12,4 +12,10 @@
     ./quickshell.nix
     ./xdg.nix
   ];
+
+  config = lib.mkIf config.c-opt.de.enable {
+    home-manager.users.${config.c-opt.user.name} = {
+      services.hyprpolkitagent.enable = true;
+    };
+  };
 }

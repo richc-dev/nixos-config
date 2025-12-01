@@ -16,7 +16,6 @@
           general = {
             lock_cmd = "pidof hyprlock || hyprlock"; # Avoid starting Hyprlock multple times.
             before_sleep_cmd = "loginctl lock-session";
-            after_sleep_cmd = "hyprctl dispatch dpms on"; # Avoid having to press a key twice to turn on the display.
           };
 
           listener = [
@@ -37,13 +36,7 @@
               timeout = 600;                        # 10min
               on-timeout = "loginctl lock-session"; # lock screen when timeout has passed
             }
-
-            {
-              timeout = 630;                                              # 10.5min
-              on-timeout = "hyprctl dispatch dpms off";                   # screen off when timeout has passed
-              on-resume = "hyprctl dispatch dpms on && brightnessctl -r"; # screen on when activity is detected after timeout has fired.
-            }
-
+	    
             {
               timeout = 1800;                   # 30min
               on-timeout = "systemctl suspend"; # suspend pc
