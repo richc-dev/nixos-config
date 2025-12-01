@@ -3,7 +3,7 @@
 
 { config, lib, pkgs, ... }:
 {
-  config = lib.mkIf config.c-opt.graphical.hyprlock.enable {
+  config = lib.mkIf config.c-opt.de.hyprlock.enable {
 
     # Required for hyprlock.
     # https://mynixos.com/home-manager/option/programs.hyprlock.enable
