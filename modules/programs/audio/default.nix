@@ -18,6 +18,10 @@
       programs.rmpc = {
         enable = true;
       };
+
+      services = {
+        playerctld.enable = true;
+      };
     };
 
   };
