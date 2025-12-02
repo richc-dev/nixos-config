@@ -22,6 +22,12 @@
         description = "User GPG key fingerprint";
       };
 
+      defaultEditor = lib.mkOption {
+        type = lib.types.str;
+	default = "emacsclient";
+	description = "User default editor";
+      };
+
       homeDirectory = lib.mkOption {
         type = lib.types.str;
         description = "User home directory";

@@ -8,13 +8,20 @@
       mpd.enable = lib.mkEnableOption "Enable Mopidy";
     };
     gaming.enable = lib.mkEnableOption "Enable gaming related programs";
+    programming = {
+      enable = lib.mkEnableOption "Enable programming related tools/apps";
+      emacs.enable = lib.mkEnableOption "Enable Emacs";
+    };
   };
 
   config.c-opt.programs = {
-    gaming.enable = lib.mkDefault true;
     audio = {
       enable = lib.mkDefault true;
       mpd.enable = lib.mkDefault true;
+    };
+    gaming.enable = lib.mkDefault true;
+    programming = {
+      emacs.enable = true;
     };
   };
 }

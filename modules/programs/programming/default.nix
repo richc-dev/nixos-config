@@ -3,10 +3,9 @@
 { config, lib, pkgs, ... }:
 {
   imports = [
+    ./emacs.nix
     ./vscodium.nix
   ];
-
-  options.c-opt.programs.programming.enable = lib.mkEnableOption "Development tools";
 
   config = lib.mkIf config.c-opt.programs.programming.enable {
     programs.direnv.enable = true;
@@ -15,7 +14,6 @@
       packages = with pkgs; [
         css-html-js-minify
         devenv
-        emacs
         godot_4
 	libgcc
         netbeans
