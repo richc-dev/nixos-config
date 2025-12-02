@@ -7,5 +7,6 @@
 
     ./home-manager.nix
     ./system.nix
+    ./user.nix
   ];
 }

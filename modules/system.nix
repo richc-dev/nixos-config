@@ -64,20 +64,6 @@
     printing.enable = lib.mkDefault true;
   };
 
-  # Set up the user.
-  users = {
-    mutableUsers = false;
-
-    users.${config.c-opt.user.name} = {
-      isNormalUser = true;
-      hashedPasswordFile = config.sops.secrets."users/${config.c-opt.user.name}".path;
-      description = config.c-opt.user.fullName;
-      extraGroups = [ "networkmanager" "wheel" "daemon" ];
-    };
-  };
-
-  nix.settings.trusted-users = [ config.c-opt.user.name ];
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
