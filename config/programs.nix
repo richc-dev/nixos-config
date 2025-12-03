@@ -10,7 +10,6 @@
     gaming.enable = lib.mkEnableOption "Enable gaming related programs";
     programming = {
       enable = lib.mkEnableOption "Enable programming related tools/apps";
-      emacs.enable = lib.mkEnableOption "Enable Emacs";
     };
   };
 
@@ -21,7 +20,7 @@
     };
     gaming.enable = lib.mkDefault true;
     programming = {
-      emacs.enable = true;
+      enable = lib.mkDefault true;
     };
   };
 }

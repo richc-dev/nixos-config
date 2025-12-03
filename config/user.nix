@@ -24,7 +24,7 @@
 
       defaultEditor = lib.mkOption {
         type = lib.types.str;
-	default = "emacsclient";
+	default = "nvim";
 	description = "User default editor";
       };
 
