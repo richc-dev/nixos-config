@@ -13,15 +13,6 @@ in
       cfg.cursor.x.package
     ] ++ cfg.icons.packages;
 
-    stylix = {
-      enable = true;
-      autoEnable = false;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/twilight.yaml";
-      polarity = cfg.colorScheme;
-
-      #cursor = cfg.cursor;
-    };
-
     environment.variables = {
       HYPRCURSOR_SIZE = cfg.cursor.hypr.size;
       XCURSOR_SIZE = cfg.cursor.x.size;
