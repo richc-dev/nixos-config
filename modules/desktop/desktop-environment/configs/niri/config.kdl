@@ -12,7 +12,7 @@ input {
             // Left emtpy so niri will apply the xkb config set in keyboard.nix
             layout "us,us"
             variant ",colemak_dh"
-            options "grp:win_space_toggle,ctrl:swapcaps"
+            options "grp:win_space_toggle,ctrl:swapcaps,compose:ralt"
         }
     }
 
