@@ -11,6 +11,10 @@
     programming = {
       enable = lib.mkEnableOption "Enable programming related tools/apps";
     };
+    utils = {
+      enable = lib.mkEnableOption "Enable system utilities";
+      ghostty.enable = lib.mkEnableOption "Enable ghostty";
+    };
   };
 
   config.c-opt.programs = {
@@ -21,6 +25,10 @@
     gaming.enable = lib.mkDefault true;
     programming = {
       enable = lib.mkDefault true;
+    };
+    utils = {
+      enable = lib.mkDefault true;
+      ghostty.enable = lib.mkDefault true;
     };
   };
 }

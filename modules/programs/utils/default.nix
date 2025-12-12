@@ -13,11 +13,6 @@
     ./starship.nix
   ];
 
-  options.c-opt.programs.utils = {
-    enable = lib.mkEnableOption "Enable system utilities";
-    terminal.enable = lib.mkEnableOption "Enable terminal";
-  };
-
   config = lib.mkIf config.c-opt.programs.utils.enable {
     # System wide packages.
     environment.systemPackages = with pkgs; [

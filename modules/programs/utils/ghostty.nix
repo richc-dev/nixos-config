@@ -6,7 +6,7 @@ let
   cfg = config.c-opt;
 in
 {
-  config = lib.mkIf cfg.programs.utils.terminal.enable {
+  config = lib.mkIf cfg.programs.utils.ghostty.enable {
     home-manager.users.${cfg.user.name} = {
       programs.ghostty = {
         enable = true;
@@ -16,7 +16,7 @@ in
           confirm-close-surface = false;
           font-size = 10;
           shell-integration = "fish";
-	  window-save-state = "never";
+          window-save-state = "never";
           theme = "GitHub Dark Default";
         };
       };
