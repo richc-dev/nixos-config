@@ -7,7 +7,6 @@
     ./ghostty.nix
     ./gpg.nix
     ./hyprland.nix
-    ./kitty.nix
     ./laptop.nix
     ./gui-packages.nix
     ./sops.nix
