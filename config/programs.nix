@@ -16,6 +16,10 @@
       duplicity.enable = lib.mkEnableOption "Enable duplicity (backups)";
       ghostty.enable = lib.mkEnableOption "Enable ghostty";
     };
+    video = {
+      enable = lib.mkEnableOption "Enable video related programs";
+      davinciResolve.enable = lib.mkEnableOption "Enable DavinciResolve";
+    };
   };
 
   config.c-opt.programs = {
@@ -31,6 +35,10 @@
       enable = lib.mkDefault true;
       duplicity.enable = lib.mkDefault false;
       ghostty.enable = lib.mkDefault true;
+    };
+    video = {
+      enable = lib.mkDefault true;
+      davinciResolve.enable = lib.mkDefault false;
     };
   };
 }

@@ -26,17 +26,11 @@
       vscodium.enable = lib.mkDefault true;
     };
     utils = {
-      enable = lib.mkDefault true;
       gui.enable = lib.mkDefault true;
       terminal = {
-        enable = lib.mkDefault true;
         fish.enable = lib.mkDefault true;
         starship.enable = lib.mkDefault true;
       };
-    };
-    video = {
-      enable = lib.mkDefault true;
-      davinciResolve.enable = lib.mkDefault false;
     };
   };
 }
