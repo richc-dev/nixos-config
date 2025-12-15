@@ -3,6 +3,7 @@
 { config, lib, pkgs, ... }:
 {
   imports = [
+    ./duplicity.nix
     ./fish.nix
     ./ghostty.nix
     ./gpg.nix

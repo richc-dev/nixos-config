@@ -5,7 +5,7 @@
   options.c-opt.programs = {
     audio = {
       enable = lib.mkEnableOption "Install audio editing/recording/playback programs";
-      mpd.enable = lib.mkEnableOption "Enable Mopidy";
+      mpd.enable = lib.mkEnableOption "Enable mpd";
     };
     gaming.enable = lib.mkEnableOption "Enable gaming related programs";
     programming = {
@@ -13,6 +13,7 @@
     };
     utils = {
       enable = lib.mkEnableOption "Enable system utilities";
+      duplicity.enable = lib.mkEnableOption "Enable duplicity (backups)";
       ghostty.enable = lib.mkEnableOption "Enable ghostty";
     };
   };
@@ -28,6 +29,7 @@
     };
     utils = {
       enable = lib.mkDefault true;
+      duplicity.enable = lib.mkDefault false;
       ghostty.enable = lib.mkDefault true;
     };
   };
