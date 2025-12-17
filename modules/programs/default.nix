@@ -10,6 +10,7 @@
     ./programming
     ./utils
     ./video
+    ./docker.nix
     ./packages.nix
   ];
 

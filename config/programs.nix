@@ -7,6 +7,7 @@
       enable = lib.mkEnableOption "Install audio editing/recording/playback programs";
       mpd.enable = lib.mkEnableOption "Enable mpd";
     };
+    docker.enable = lib.mkEnableOption "Enable docker";
     gaming.enable = lib.mkEnableOption "Enable gaming related programs";
     programming = {
       enable = lib.mkEnableOption "Enable programming related tools/apps";
@@ -27,6 +28,7 @@
       enable = lib.mkDefault true;
       mpd.enable = lib.mkDefault true;
     };
+    docker.enable = lib.mkDefault true;
     gaming.enable = lib.mkDefault true;
     programming = {
       enable = lib.mkDefault true;
