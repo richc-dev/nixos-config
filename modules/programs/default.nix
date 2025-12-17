@@ -22,10 +22,6 @@
     image.enable = lib.mkDefault true;
     office.enable = lib.mkDefault true;
     privacy.enable = lib.mkDefault true;
-    programming = {
-      enable = lib.mkDefault true;
-      vscodium.enable = lib.mkDefault true;
-    };
     utils = {
       gui.enable = lib.mkDefault true;
       terminal = {

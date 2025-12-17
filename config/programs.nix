@@ -11,6 +11,7 @@
     gaming.enable = lib.mkEnableOption "Enable gaming related programs";
     programming = {
       enable = lib.mkEnableOption "Enable programming related tools/apps";
+      vscodium.enable = lib.mkEnableOption "Enable VSCodium";
     };
     utils = {
       enable = lib.mkEnableOption "Enable system utilities";
@@ -32,6 +33,7 @@
     gaming.enable = lib.mkDefault true;
     programming = {
       enable = lib.mkDefault true;
+      vscodium.enable = lib.mkDefault false;
     };
     utils = {
       enable = lib.mkDefault true;
