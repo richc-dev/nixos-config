@@ -7,6 +7,7 @@
       dropbox
       freecad-wayland
       kdePackages.kate
+      lf
       orca-slicer
       qalculate-gtk
       winetricks
