@@ -9,24 +9,21 @@
       libsForQt5.kservice
     ];
 
-    xdg.portal = {
-      enable = true;
-      wlr.enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-      ];
-    };
-
-    home-manager.users.${config.c-opt.user.name}.xdg = {
-      enable = true;
-      autostart.enable = true;
-      mimeApps = {
+    xdg = {
+      portal = {
+        enable = true;
+        wlr.enable = true;
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-gtk
+        ];
+      };
+      mime = {
         enable = true;
         defaultApplications = {
           "image/png" = "nomacs.desktop";
           "image/jpeg" = "nomacs.desktop";
           "image/svg+xml" = "inkscape.desktop";
-          "text/plain" = "emacs.desktop";
+          "text/plain" = "nvim.desktop";
           "text/html" = "librewolf.desktop";
           "video/mp4" = "mpv.desktop";
           "video/mkv" = "mpv.desktop";
@@ -36,6 +33,10 @@
           "x-scheme-handler/unknown" = "librewolf.desktop";
         };
       };
+    };
+
+    home-manager.users.${config.c-opt.user.name}.xdg = {
+      enable = true;
       userDirs = {
         enable = true;
         desktop = "$HOME/Desktop";
