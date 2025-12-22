@@ -16,16 +16,22 @@
         description = "User full name";
       };
 
+      email = lib.mkOption {
+        type = lib.types.str;
+        default = "rcc@richc.dev";
+        description = "User email address";
+      };
+
       gpgKey = lib.mkOption {
         type = lib.types.str;
-        default = "DCD23EA671ECFA94443A0022C1C9C7BCDF81D9BC";
+        default = "";
         description = "User GPG key fingerprint";
       };
 
       defaultEditor = lib.mkOption {
         type = lib.types.str;
-	default = "nvim";
-	description = "User default editor";
+	      default = "nvim";
+	      description = "User default editor";
       };
 
       homeDirectory = lib.mkOption {

@@ -6,6 +6,7 @@
     ./duplicity.nix
     ./fish.nix
     ./ghostty.nix
+    ./git.nix
     ./gpg.nix
     ./hyprland.nix
     ./laptop.nix
@@ -38,7 +39,6 @@
 
       # Other
       bat
-      git
       ripgrep
     ];
 
