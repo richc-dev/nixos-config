@@ -11,7 +11,6 @@
     home-manager.users.${config.c-opt.user.name} = {
       home.packages = with pkgs; [
         audacity
-        dopamine
         spotify
       ];
 
