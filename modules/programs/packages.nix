@@ -6,7 +6,6 @@
       anki
       dropbox
       freecad-wayland
-      kdePackages.kate
       lf
       orca-slicer
       perl540Packages.FileMimeInfo
