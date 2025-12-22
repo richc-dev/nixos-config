@@ -3,14 +3,16 @@
   config = lib.mkIf config.c-opt.programs.audio.mpd.enable {
     services.mpd = {
       enable = true;
-      musicDirectory = lib.mkDefault "${config.c-opt.user.homeDirectory}/Music/mpd";
       user = "${config.c-opt.user.name}";
-      extraConfig = ''
-        audio_output {
-	  type "pipewire"
-	  name "Pipewire output"
-	}
-      '';
+      settings = {
+        audio_output = [
+          {
+            type = "pipewire";
+            name = "Pipewire output";
+          }
+        ];
+        music_directory = lib.mkDefault "${config.c-opt.user.homeDirectory}/Music/mpd";
+      };
       startWhenNeeded = true;
     };
 
