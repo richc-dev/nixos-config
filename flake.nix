@@ -9,7 +9,7 @@
 
     # Nix VSCode Extensions allows use of VSCodium extensions not in nixpkgs.
     # https://github.com/nix-community/nix-vscode-extensions
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    #nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
     # Home Manager doesn't generate the configs when using `nixos-rebuid boot`
     # command. And yes, I am an IDIOT and spent hours trying to figure out
@@ -22,7 +22,7 @@
 
     # Hyprland
     # https://hypr.land
-    hyprland.url = "github:hyprwm/Hyprland";
+    #hyprland.url = "github:hyprwm/Hyprland";
 
     # Noctalia shell
     # https://github.com/noctalia-dev/noctalia-shell
@@ -43,9 +43,9 @@
     self,
     nixpkgs,
     nixpkgs-stable,
-    nix-vscode-extensions,
+    #nix-vscode-extensions,
     home-manager,
-    hyprland,
+    #hyprland,
     noctalia,
     sops-nix,
   }@inputs:
@@ -74,9 +74,9 @@
 
         # Args passed to NixOS modules
         specialArgs = {
-          inherit hyprland;
+          #inherit hyprland;
           inherit pkgs-stable;
-          inherit nix-vscode-extensions;
+          #inherit nix-vscode-extensions;
           inherit noctalia;
           inherit sops-nix;
           inherit system;
