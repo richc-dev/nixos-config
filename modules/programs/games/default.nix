@@ -22,7 +22,6 @@
         heroic
         mangohud
         prismlauncher
-        vintagestory
       ];
     };
   };
