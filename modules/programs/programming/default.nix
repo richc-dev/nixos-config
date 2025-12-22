@@ -17,18 +17,16 @@
         godot_4
         libgcc
         netbeans
-        php
-        php84Packages.composer
         python313
         zap
       ];
 
       programs = {
         neovim = {
-	  enable = true;
-	  withRuby = false;
-	  withPython3 = false;
-	};
+	        enable = true;
+	        withRuby = false;
+	        withPython3 = false;
+	      };
       };
     };
 
