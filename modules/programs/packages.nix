@@ -9,6 +9,7 @@
       kdePackages.kate
       lf
       orca-slicer
+      perl540Packages.FileMimeInfo
       qalculate-gtk
       winetricks
       wineWowPackages.stagingFull
