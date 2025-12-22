@@ -19,6 +19,19 @@
       };
       mime = {
         enable = true;
+        addedAssociations = {
+          "image/png" = "nomacs.desktop";
+          "image/jpeg" = "nomacs.desktop";
+          "image/svg+xml" = "inkscape.desktop";
+          "text/plain" = "nvim.desktop";
+          "text/html" = "librewolf.desktop";
+          "video/mp4" = "mpv.desktop";
+          "video/mkv" = "mpv.desktop";
+          "x-scheme-handler/http" = "librewolf.desktop";
+          "x-scheme-handler/https" = "librewolf.desktop";
+          "x-scheme-handler/about" = "librewolf.desktop";
+          "x-scheme-handler/unknown" = "librewolf.desktop";
+        };
         defaultApplications = {
           "image/png" = "nomacs.desktop";
           "image/jpeg" = "nomacs.desktop";
