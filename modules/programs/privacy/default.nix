@@ -3,7 +3,7 @@
 # https://www.passwordstore.org/
 # https://dyne.org/tomb/
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgs-stable, ... }:
 {
   options.c-opt.programs.privacy.enable = lib.mkEnableOption "Enable Privacy Focused Programs";
 
@@ -23,20 +23,6 @@
         mullvad-vpn = {
           enable = true;
           package = pkgs.mullvad-vpn;
-        };
-
-        keepassxc = {
-          enable = true;
-          settings = {
-            Browser = {
-              Enabled = true;
-              UpdateBinaryPath = false;
-            };
-
-            GUI = {
-              ApplicationTheme = "dark";
-            };
-          };
         };
 
       };
