@@ -6,9 +6,10 @@
       anki
       dropbox
       freecad-wayland
+      gedit
       lf
       orca-slicer
-      perl540Packages.FileMimeInfo
+      perl5Packages.FileMimeInfo
       qalculate-gtk
       winetricks
       wineWowPackages.stagingFull

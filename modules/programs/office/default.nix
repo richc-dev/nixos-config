@@ -12,7 +12,7 @@
         hunspell # For LibreOffice
         libreoffice
         obsidian
-        perl540Packages.FinanceQuote # For GnuCash
+        perl5Packages.FinanceQuote # For GnuCash
         readest
       ];
     };
