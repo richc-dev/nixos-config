@@ -1,6 +1,6 @@
 # Programs for image editing/viewing.
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgs-stable, ... }:
 {
   options.c-opt.programs.image.enable = lib.mkEnableOption "Install image editing/viewing programs";
 
@@ -17,14 +17,11 @@
 
     home-manager.users.${config.c-opt.user.name}.home = {
       packages = with pkgs; [
-        aseprite
 	      gimp
         inkscape-with-extensions
         nomacs
         krita
-        scribus
-        libwacom
-      ];
+      ] ++ [ pkgs-stable.aseprite ];
     };
 
   };
