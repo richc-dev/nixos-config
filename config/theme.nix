@@ -61,11 +61,13 @@
       packages = lib.mkOption {
         type = lib.types.listOf lib.types.package;
         default = [
-          pkgs.nerd-fonts.dejavu-sans-mono
-          pkgs.rubik
-          pkgs.noto-fonts-color-emoji
+          pkgs.courier-prime
+          pkgs.liberation_ttf
           pkgs.maple-mono.Normal-NF
-	  pkgs.nerd-fonts.symbols-only
+          pkgs.nerd-fonts.dejavu-sans-mono
+          pkgs.noto-fonts-color-emoji
+	        pkgs.nerd-fonts.symbols-only
+          pkgs.rubik
         ];
         description = "Font packages to install";
       };
