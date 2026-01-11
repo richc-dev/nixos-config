@@ -14,7 +14,7 @@
         css-html-js-minify
         devenv
         emacs
-        netbeans
+        godot
         python313
         zap
       ];
