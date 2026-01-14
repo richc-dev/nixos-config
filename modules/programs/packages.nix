@@ -15,7 +15,7 @@
       wineWowPackages.stagingFull
 
       thunderbird
-    ];
+    ] ++ [ config.c-pkgs.repeater ];
 
     programs = {
       #thunderbird = {

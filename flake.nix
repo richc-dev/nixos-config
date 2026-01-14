@@ -57,6 +57,7 @@
 
       ./config
       ./modules
+      ./packages
     ];
   in
   {
