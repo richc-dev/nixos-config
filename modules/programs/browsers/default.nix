@@ -14,6 +14,9 @@
       ];
 
       programs = {
+        qutebrowser = {
+          enable = true;
+        };
 
         # Install Brave
         chromium = {
