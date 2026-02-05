@@ -21,6 +21,7 @@
       home.packages = with pkgs; [
         heroic
         mangohud
+        openttd
         prismlauncher
       ];
     };
