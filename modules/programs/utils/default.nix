@@ -39,6 +39,7 @@
 
       # Other
       bat
+      glow
       ripgrep
     ];
 
