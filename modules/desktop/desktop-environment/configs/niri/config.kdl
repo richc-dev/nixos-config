@@ -130,9 +130,7 @@ layout {
     // You can also add a border. It's similar to the focus ring, but always visible.
     border {
         width 2
-        active-gradient from="rgb(100,0,0)" to="rgb(50,0,0)" angle=45 relative-to="workspace-view"
-        inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
-        active-color "#7fc8ff"
+        active-color "#000000"
         inactive-color "#505050"
         urgent-color "#9b0000"
     }
