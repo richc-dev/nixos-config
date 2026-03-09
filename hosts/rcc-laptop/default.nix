@@ -1,3 +1,4 @@
+
 { config, lib, pkgs, ... }:
 let
 nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
@@ -27,8 +28,10 @@ in
   # Nvidia laptop settings.
   # https://wiki.nixos.org/wiki/NVIDIA#Offload_mode
   hardware.nvidia = {
+    # Enable power management to hopefully fix my problems with suspend.
+    # https://discourse.nixos.org/t/suspend-and-unsuspend-issues/50239/9
     powerManagement = {
-      enable = false;
+      enable = true;
       finegrained = true;
     };
 
