@@ -1,11 +1,17 @@
 # Options for the desktop environment.
 { config, lib, ... }:
 {
-  options.c-opt.de = {
-    enable = lib.mkEnableOption "Enable desktop";
-    hyprlock.enable = lib.mkEnableOption "Enable hyprlock";
-    noctalia.enable = lib.mkEnableOption "Enable Noctalia desktop shell";
-    sddm.enable = lib.mkEnableOption "Enable SDDM Display Manager";
+  options.c-opt = {
+    graphical = {
+      hypridle.enable = lib.mkEnableOption "Enable hypridle";
+    };
+
+    de = {
+      enable = lib.mkEnableOption "Enable desktop";
+      hyprlock.enable = lib.mkEnableOption "Enable hyprlock";
+      noctalia.enable = lib.mkEnableOption "Enable Noctalia desktop shell";
+      sddm.enable = lib.mkEnableOption "Enable SDDM Display Manager";
+    };
   };
 
   config.c-opt = {
@@ -19,7 +25,7 @@
 
     de = {
       enable = lib.mkDefault true;
-      hyprlock.enable = lib.mkDefault config.c-opt.de.enable;
+      hyprlock.enable = lib.mkDefault false;
       niri.enable = lib.mkDefault config.c-opt.de.enable;
       noctalia.enable = lib.mkDefault config.c-opt.de.enable;
       sddm.enable = lib.mkDefault config.c-opt.de.enable;
