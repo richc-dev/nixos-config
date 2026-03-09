@@ -3,8 +3,6 @@
 
 { config, lib, pkgs, ... }:
 {
-  options.c-opt.graphical.hypridle.enable = lib.mkEnableOption "Enable Hypridle";
-
   config = lib.mkIf config.c-opt.graphical.hypridle.enable {
 
     home-manager.users.${config.c-opt.user.name} = {
@@ -14,8 +12,9 @@
         enable = true;
         settings = {
           general = {
-            lock_cmd = "pidof hyprlock || hyprlock"; # Avoid starting Hyprlock multple times.
-            before_sleep_cmd = "loginctl lock-session";
+            #lock_cmd = "pidof hyprlock || hyprlock"; # Avoid starting Hyprlock multple times.
+            #before_sleep_cmd = "loginctl lock-session";
+            before_sleep_cmd = "noctalia-shell ipc call lockScreen lock"; # Use Noctalia lock screen
           };
 
           listener = [
@@ -34,9 +33,10 @@
 
             {
               timeout = 600;                        # 10min
-              on-timeout = "loginctl lock-session"; # lock screen when timeout has passed
+              #on-timeout = "loginctl lock-session"; # lock screen when timeout has passed
+              on-timeout = "noctalia-shell ipc call lockScreen lock"; # Use Noctalia lock screen
             }
-	    
+
             {
               timeout = 1800;                   # 30min
               on-timeout = "systemctl suspend"; # suspend pc
