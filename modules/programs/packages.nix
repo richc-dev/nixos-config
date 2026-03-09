@@ -12,7 +12,7 @@
       perl5Packages.FileMimeInfo
       qalculate-gtk
       winetricks
-      wineWowPackages.stagingFull
+      wineWow64Packages.full
 
       thunderbird
     ] ++ [ config.c-pkgs.repeater ];
