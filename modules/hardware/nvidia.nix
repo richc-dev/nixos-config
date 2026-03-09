@@ -12,7 +12,8 @@
       graphics.enable = true;
 
       nvidia = {
-        # Modesetting is required.
+        # Modesetting is required for Wayland.
+        # https://wiki.nixos.org/wiki/NVIDIA#Wayland
         modesetting.enable = true;
         # Enable Nvidia settings menu,
         # accessible via `nvidia-settings`.
