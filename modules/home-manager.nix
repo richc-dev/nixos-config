@@ -1,8 +1,9 @@
-{ config, lib, pkgs, noctalia, ... }:
+{ config, eilmeldung, lib, pkgs, noctalia, ... }:
 {
   home-manager = {
     extraSpecialArgs = {
       inherit noctalia;
+      inherit eilmeldung;
     };
 
     useGlobalPkgs = true;

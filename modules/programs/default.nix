@@ -11,6 +11,7 @@
     ./utils
     ./video
     ./docker.nix
+    ./eilmeldung.nix
     ./packages.nix
   ];
 
