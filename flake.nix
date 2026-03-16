@@ -37,10 +37,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Eilmeldung RSS reader
-    # https://github.com/christo-auer/eilmeldung
-    eilmeldung.url = "github:christo-auer/eilmeldung";
   };
 
   outputs = {
@@ -52,7 +48,6 @@
     #hyprland,
     noctalia,
     sops-nix,
-    eilmeldung,
   }@inputs:
   let
     # Modules shared between all systems.
@@ -85,7 +80,6 @@
           #inherit nix-vscode-extensions;
           inherit noctalia;
           inherit sops-nix;
-          inherit eilmeldung;
           inherit system;
         };
       in
