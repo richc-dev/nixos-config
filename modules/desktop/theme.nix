@@ -18,6 +18,8 @@ in
       XCURSOR_SIZE = cfg.cursor.x.size;
       HYPRCURSOR_THEME = cfg.cursor.hypr.name;
       XCURSOR_THEME = cfg.cursor.x.name;
+      QT_QPA_PLATFORMTHEME = "adwaita-dark";
+      QT_STYLE_OVERRIDE = "adwaita-dark";
     };
 
     fonts = {
@@ -53,6 +55,11 @@ in
         theme = {
           name = if cfg.colorScheme == "dark" then "Adwaita-dark" else "Adwaita";
           package = pkgs.gnome-themes-extra;
+        };
+        gtk4 = {
+          enable = true;
+          colorScheme = cfg.colorScheme;
+          theme = null;
         };
       };
     };

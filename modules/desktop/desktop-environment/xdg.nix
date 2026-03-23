@@ -52,6 +52,7 @@
       enable = true;
       userDirs = {
         enable = true;
+        setSessionVariables = true;
         desktop = "$HOME/Desktop";
         documents = "$HOME/Documents";
         download = "$HOME/Downloads";
