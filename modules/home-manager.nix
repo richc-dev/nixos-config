@@ -1,7 +1,8 @@
-{ config, lib, pkgs, noctalia, ... }:
+{ config, lib, pkgs, pkgs-stable, noctalia, ... }:
 {
   home-manager = {
     extraSpecialArgs = {
+      inherit pkgs-stable;
       inherit noctalia;
     };
 
