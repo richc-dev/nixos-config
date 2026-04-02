@@ -16,6 +16,9 @@
       programs = {
         qutebrowser = {
           enable = true;
+          settings = {
+            colors.webpage.preferred_color_scheme = "dark";
+          };
         };
 
         # Install Brave
