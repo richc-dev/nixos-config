@@ -1,0 +1,8 @@
+colors = "always"
+pager = "always"
+unrecord_changes = 1
+
+[author]
+name = "richc"
+full_name = "Richie C"
+email = "rcc@richc.dev"

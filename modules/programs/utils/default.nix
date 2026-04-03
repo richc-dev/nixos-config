@@ -52,6 +52,7 @@
         lm_sensors
         nix-output-monitor
         nvd
+        pijul
       ];
 
       programs = {
@@ -65,6 +66,8 @@
           flake = "${config.c-opt.user.homeDirectory}/nixos-config";
         };
       };
+
+      xdg.configFile."pijul/config.toml".source = ./configs/pijul.toml;
     };
 
   };
