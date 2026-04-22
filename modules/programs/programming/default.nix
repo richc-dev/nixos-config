@@ -16,37 +16,20 @@
 
         devenv
         emacs
+        flow-control
         godot
+        nixd
         python313
         zap
       ];
 
       programs = {
         neovim = {
-	        enable = true;
-	        withRuby = false;
-	        withPython3 = false;
-	      };
-
-        zed-editor = {
-          enable = true;
-          extensions = [ "haskell" "html" "nix" "php" "zig" ];
-          userSettings = {
-            helix_mode = true;
-            vim_mode = false;
-            telemetry = {
-              diagnostics = false;
-              metrics = false;
-            };
-            base_keymap = "VSCode";
-            theme = {
-              mode = "dark";
-              dark = "Ayu Dark";
-            };
-          };
-        };
+	  enable = true;
+	  withRuby = false;
+          withPython3 = false;
+	};
       };
     };
-
   };
 }
