@@ -14,9 +14,9 @@
     };
 
     home-manager.users.${config.c-opt.user.name} = {
-      programs.lutris = {
-        enable = true;
-      };
+      #programs.lutris = {
+        #enable = true;
+      #};
 
       home.packages = with pkgs; [
         heroic

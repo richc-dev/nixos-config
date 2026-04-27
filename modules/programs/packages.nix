@@ -1,5 +1,7 @@
-{ config, pkgs, ... }:
+{ config, hamr, pkgs, system, ... }:
 {
+  environment.systemPackages = [ hamr.packages.${system}.default ];
+
   home-manager.users.${config.c-opt.user.name} = {
     home.packages = with pkgs; [
       android-file-transfer
@@ -15,7 +17,7 @@
       wineWow64Packages.full
 
       thunderbird
-    ] ++ [ config.c-pkgs.repeater ];
+    ];# ++ [ config.c-pkgs.repeater ];
 
     programs = {
       #thunderbird = {
