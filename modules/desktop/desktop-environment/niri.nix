@@ -10,6 +10,7 @@
     environment.systemPackages = with pkgs; [
       xwayland-satellite # xwayland support
       mako
+      wl-clipboard
     ];
 
     xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-gnome ];

@@ -25,10 +25,29 @@
 
       programs = {
         neovim = {
-	  enable = true;
-	  withRuby = false;
+	        enable = true;
+	        withRuby = false;
           withPython3 = false;
-	};
+	      };
+
+        helix = {
+          enable = true;
+          defaultEditor = true;
+          settings = {
+            theme = "ayu_evolve";
+            editor = {
+              cursor-shape = {
+                insert = "bar";
+                normal = "block";
+                select = "underline";
+              };
+              cursorline = true;
+              indent-guides.render = true;
+              line-number = "relative";
+              rulers = [100];
+            };
+          };
+        };
       };
     };
   };
