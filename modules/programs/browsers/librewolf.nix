@@ -17,16 +17,8 @@
             DisableFirefoxStudies = true;
             # Add search engines.
             SearchEngines = {
-              Default = "Presearch";
+              Default = "DuckDuckGo";
               Add = [
-                # Presearch: Private search engine.
-                # https://presearch.com/learn-more
-                {
-                  Name = "Presearch";
-                  URLTemplate = "https://presearch.com/search?q={searchTerms}";
-                  IconURL = "https://na-us-2.presearch.com/images/icon.svg";
-                  Alias = "@ps";
-                }
                 # Merriam-Webster dictionary: For finding the meaning of that obscure word your
                 # friend used to sound smart.
                 # https://www.merriam-webster.com/about-us
