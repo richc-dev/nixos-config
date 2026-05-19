@@ -8,8 +8,7 @@
     home-manager.users.${config.c-opt.user.name} = {
       home.packages = with pkgs; [
         kdePackages.ark
-        kdePackages.dolphin
-        kdePackages.dolphin-plugins
+        nautilus
         overskride # Bluetooth manager
       ];
 
