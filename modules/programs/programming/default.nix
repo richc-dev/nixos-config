@@ -42,6 +42,7 @@
                 select = "underline";
               };
               cursorline = true;
+              whitespace.render = "all";
               indent-guides.render = true;
               line-number = "relative";
               rulers = [100];

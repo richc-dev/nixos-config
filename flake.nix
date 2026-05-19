@@ -11,11 +11,6 @@
     # https://github.com/nix-community/nix-vscode-extensions
     #nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
-    hamr = {
-      url = "github:Stewart86/hamr";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Home Manager doesn't generate the configs when using `nixos-rebuid boot`
     # command. And yes, I am an IDIOT and spent hours trying to figure out
     # why Home Manager wasn't applying configs.
@@ -49,7 +44,6 @@
     nixpkgs,
     nixpkgs-stable,
     #nix-vscode-extensions,
-    hamr,
     home-manager,
     #hyprland,
     noctalia,
@@ -81,7 +75,6 @@
 
         # Args passed to NixOS modules
         specialArgs = {
-          inherit hamr;
           #inherit hyprland;
           inherit pkgs-stable;
           #inherit nix-vscode-extensions;

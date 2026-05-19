@@ -6,7 +6,7 @@
     environment.systemPackages = with pkgs; [
       xdg-user-dirs
       xdg-utils
-      libsForQt5.kservice
+      kdePackages.kservice
     ];
 
     xdg = {

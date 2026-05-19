@@ -1,6 +1,6 @@
-{ config, hamr, pkgs, system, ... }:
+{ config, pkgs, ... }:
 {
-  environment.systemPackages = [ hamr.packages.${system}.default ];
+  #environment.systemPackages = [ hamr.packages.${system}.default ];
 
   home-manager.users.${config.c-opt.user.name} = {
     home.packages = with pkgs; [
