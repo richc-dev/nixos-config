@@ -23,7 +23,7 @@
           "image/png" = "nomacs.desktop";
           "image/jpeg" = "nomacs.desktop";
           "image/svg+xml" = "inkscape.desktop";
-          "text/plain" = "nvim.desktop";
+          "text/plain" = "hx.desktop";
           "text/html" = "librewolf.desktop";
           "video/mp4" = "mpv.desktop";
           "video/mkv" = "mpv.desktop";
@@ -36,7 +36,7 @@
           "image/png" = "nomacs.desktop";
           "image/jpeg" = "nomacs.desktop";
           "image/svg+xml" = "inkscape.desktop";
-          "text/plain" = "nvim.desktop";
+          "text/plain" = "hx.desktop";
           "text/html" = "librewolf.desktop";
           "video/mp4" = "mpv.desktop";
           "video/mkv" = "mpv.desktop";

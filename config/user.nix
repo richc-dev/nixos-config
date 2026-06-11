@@ -30,7 +30,7 @@
 
       defaultEditor = lib.mkOption {
         type = lib.types.str;
-	      default = "nvim";
+	      default = "hx";
 	      description = "User default editor";
       };
 

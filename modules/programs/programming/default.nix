@@ -25,10 +25,10 @@
 
       programs = {
         neovim = {
-	        enable = true;
-	        withRuby = false;
+          enable = true;
+          withRuby = false;
           withPython3 = false;
-	      };
+        };
 
         helix = {
           enable = true;
@@ -36,18 +36,40 @@
           settings = {
             theme = "ayu_evolve";
             editor = {
+
               cursor-shape = {
                 insert = "bar";
                 normal = "block";
                 select = "underline";
               };
+
               cursorline = true;
-              whitespace.render = "all";
+              end-of-line-diagnostics = "hint";
               indent-guides.render = true;
+
+              inline-diagnostics = {
+                cursor-line = "error";
+                other-lines = "disable";
+              };
+
               line-number = "relative";
               rulers = [100];
+              statusline.left = [ "mode" "spinner" "version-control" "file-name" ];
+              whitespace.render = "all";
             };
+
+            keys = {
+              normal = {
+                X = "select_line_above";
+              };
+
+              select = {
+                X = "select_line_above";
+              };
+            };
+
           };
+
         };
       };
     };
