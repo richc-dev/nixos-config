@@ -12,6 +12,7 @@
       home.packages = with pkgs; [
         audacity
         spotify
+        spotify-player
       ];
 
       programs.rmpc = {

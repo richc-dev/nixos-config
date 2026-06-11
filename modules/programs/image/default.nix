@@ -18,6 +18,7 @@
     home-manager.users.${config.c-opt.user.name}.home = {
       packages = with pkgs; [
 	      gimp
+	      graphite
         inkscape-with-extensions
         nomacs
         krita
