@@ -54,7 +54,10 @@
 
               line-number = "relative";
               rulers = [100];
-              statusline.left = [ "mode" "spinner" "version-control" "file-name" ];
+              statusline = {
+                left = [ "mode" "spinner" ];
+                center = [ "file-name" "read-only-indicator" "file-modification-indicator" ];
+              };
               whitespace.render = "all";
             };
 

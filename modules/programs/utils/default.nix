@@ -40,6 +40,7 @@
       # Other
       bat
       glow
+      lla
       ripgrep
     ];
 
