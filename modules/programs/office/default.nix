@@ -1,6 +1,6 @@
 # Office programs.
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgs-stable, ... }:
 {
   options.c-opt.programs.office.enable = lib.mkEnableOption "Install office programs";
 
@@ -13,7 +13,8 @@
         libreoffice
         obsidian
         perl5Packages.FinanceQuote # For GnuCash
-        readest
+      ] ++ [
+        pkgs-stable.readest
       ];
     };
 
