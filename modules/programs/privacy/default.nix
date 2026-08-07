@@ -3,13 +3,14 @@
 # https://www.passwordstore.org/
 # https://dyne.org/tomb/
 
-{ config, lib, pkgs, pkgs-stable, ... }:
+{ config, lib, pkgs, ... }:
 {
   options.c-opt.programs.privacy.enable = lib.mkEnableOption "Enable Privacy Focused Programs";
 
   config = lib.mkIf config.c-opt.programs.privacy.enable {
     home-manager.users.${config.c-opt.user.name} = {
       home.packages = with pkgs; [
+        ivpn-ui
         pass
         passExtensions.pass-audit
         passExtensions.pass-genphrase
@@ -19,21 +20,9 @@
         tomb
       ];
 
-      programs = {
-        mullvad-vpn = {
-          enable = true;
-          package = pkgs.mullvad-vpn;
-        };
-
-      };
     };
 
-    services = {
-      resolved.enable = true;
-      mullvad-vpn = {
-        enable = true;
-        package = pkgs.mullvad-vpn;
-      };
-    };
+    services.ivpn.enable = true;
+
   };
 }

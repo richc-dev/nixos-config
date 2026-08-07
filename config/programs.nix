@@ -29,7 +29,7 @@
       enable = lib.mkDefault true;
       mpd.enable = lib.mkDefault true;
     };
-    docker.enable = lib.mkDefault true;
+    docker.enable = lib.mkDefault false;
     gaming.enable = lib.mkDefault true;
     programming = {
       enable = lib.mkDefault true;

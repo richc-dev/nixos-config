@@ -1,23 +1,32 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-stable, ... }:
 {
-  #environment.systemPackages = [ hamr.packages.${system}.default ];
+  environment.systemPackages = with pkgs; [ podman-compose ];
+
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
 
   home-manager.users.${config.c-opt.user.name} = {
     home.packages = with pkgs; [
       android-file-transfer
       anki
       dropbox
-      freecad-wayland
       gedit
       lf
+      nushell
       orca-slicer
       perl5Packages.FileMimeInfo
       qalculate-gtk
+      qbittorrent
       winetricks
       wineWow64Packages.full
+      zettlr
 
       thunderbird
-    ];# ++ [ config.c-pkgs.repeater ];
+    ] ++ [
+      pkgs-stable.freecad
+    ];
 
     programs = {
       #thunderbird = {
@@ -29,5 +38,6 @@
       };
 
     };
+
   };
 }
