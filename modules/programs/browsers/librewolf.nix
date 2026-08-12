@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 {
   options.c-opt.programs.browsers.librewolf.enable = lib.mkEnableOption "Librewolf";
 
@@ -41,13 +41,13 @@
                   IconURL = "https://search.nixos.org/favicon.png";
                   Alias = "@no";
                 }
-		# MyNixOS is useful for finding Home Manager options.
-		{
-		  Name = "MyNixOS";
-		  URLTemplate = "https://mynixos.com/search?q={searchTerms}";
-		  IconURL = "https://mynixos.com/favicon.ico";
-		  Alias = "@mn";
-		}
+            		# MyNixOS is useful for finding Home Manager options.
+            		{
+            		  Name = "MyNixOS";
+            		  URLTemplate = "https://mynixos.com/search?q={searchTerms}";
+            		  IconURL = "https://mynixos.com/favicon.ico";
+            		  Alias = "@mn";
+            		}
               ];
             };
             Preferences = {
@@ -56,6 +56,10 @@
               "privacy.fingerprintingProtection.overrides" = "+AllTargets,-CSSPrefersColorScheme";
             };
             ExtensionSettings = {
+              "{d19a89b9-76c1-4a61-bcd4-49e8de916403}" = {
+                install_url = "https://github.com/mullvad/browser-extension/releases/download/v0.9.10-firefox-beta/mullvad-browser-extension-0.9.10.xpi";
+                installation_mode = "force_installed";
+              };
               "passff@invicem.pro" = {
                 install_url = "https://addons.mozilla.org/firefox/downloads/latest/passff/latest.xpi";
                 installation_mode = "force_installed";

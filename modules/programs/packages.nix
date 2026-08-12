@@ -2,20 +2,32 @@
 {
   environment.systemPackages = with pkgs; [ podman-compose ];
 
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
+  virtualisation = {
+    podman = {
+        enable = true;
+        dockerCompat = true;
+      };
+
+      libvirtd = {
+        enable = true;
+      };
+  };
+
+  programs.virt-manager.enable = true;
+
+  services = {
+    resolved.enable = true;
+    mullvad-vpn = {
+      enable = true;
+    };
   };
 
   home-manager.users.${config.c-opt.user.name} = {
     home.packages = with pkgs; [
       android-file-transfer
       anki
-      dropbox
-      gedit
       lf
       nushell
-      orca-slicer
       perl5Packages.FileMimeInfo
       qalculate-gtk
       qbittorrent
@@ -24,14 +36,16 @@
       zettlr
 
       thunderbird
-    ] ++ [
-      pkgs-stable.freecad
     ];
 
     programs = {
       #thunderbird = {
       #  enable = true;
       #};
+
+      mullvad-vpn = {
+        enable = true;
+      };
 
       vesktop = {
         enable = true;

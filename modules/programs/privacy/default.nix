@@ -10,7 +10,6 @@
   config = lib.mkIf config.c-opt.programs.privacy.enable {
     home-manager.users.${config.c-opt.user.name} = {
       home.packages = with pkgs; [
-        ivpn-ui
         pass
         passExtensions.pass-audit
         passExtensions.pass-genphrase
@@ -21,8 +20,6 @@
       ];
 
     };
-
-    services.ivpn.enable = true;
 
   };
 }

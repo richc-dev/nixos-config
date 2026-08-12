@@ -15,7 +15,6 @@
         multimarkdown
 
         devenv
-        emacs
         flow-control
         godot
         nixd
